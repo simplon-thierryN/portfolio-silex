@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block section %}
+
+    <section id="article">
+        <div class="container">
+
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                <button class="PictureForm">Ajouter une image</button>
+
+                <div id="PictureForm" class="update_form">
+                    <span class="back span_img"></span>
+                    {{ form_start(addPic,{'attr':{'class':'flex'}}) }}
+                    <h3>update article</h3>
+
+                    <label for="title"> -- Titre -- </label>
+                    {{ form_widget(addPic.title) }}
+
+                    <label for="url"> -- Importer une image -- </label>
+                    {{ form_widget(addPic.url) }}
+
+                    <div class="button">
+                        <button type="submit">Save</button>
+                    </div>
+                    {{ form_end(addPic) }}
+                </div>
+            {% endif %}
+
+            <div class="detail_article flex">
+                <h3>{{ article.title }}</h3>
+                <span class="date">{{ article.date|date('d-m-Y') }}</span>
+                <p class="description">
+                    {{ article.content }}<br>
+                </p>
+
+                <div class="album_article">
+                    {% for picture in album %}
+                        <div class="picture_blog">
+                            <img src="{{ asset('images/blog/'~picture.url) }}" alt="{{ picture.title }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

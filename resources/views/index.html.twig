@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block section %}
+
+
+    <section class="portfolio">
+
+        <div class="container">
+            <ul class="category flex">
+                <li  class="index"><a href="#Home">Home</a></li>
+                {% for category in categories %}
+                    <li class="masonry"><a href="#{{ category.alb_category }}">{{ category.alb_category }}</a></li>
+                {% endfor %}
+            </ul>
+
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+
+            <button class="albumForm">Ajouter un album</button>
+
+            <div id="albumForm" class="update_form">
+
+                <span class="back span_img"></span>
+                {{ form_start(albumForm,{'attr':{'class':'flex' }}) }}
+                <h3>Ajouter un album</h3>
+
+                <label for="title"> -- Titre -- </label>
+                {{ form_widget(albumForm.title) }}
+
+                <label for="category"> -- Catégorie -- </label>
+                {{ form_widget(albumForm.category) }}
+
+                <label for="url"> -- Upload Img -- </label>
+                {{ form_widget(albumForm.url) }}
+
+                <div class="button">
+                    <button class="album" type="submit">Ajouter</button>
+                </div>
+                {{ form_end(albumForm) }}
+            </div>
+        </div>
+
+        {% endif %}
+
+        <div class="grid">
+            {% for album in albums %}
+                <div class="album {{ album.category }} grid-item">
+                    <a href="{{ path('album',{'albumId':album.id}) }}"><img src="images/album/{{ album.url }}" alt="tot">
+                        <p>{{ album.title }}</p>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
+

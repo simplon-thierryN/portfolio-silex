@@ -1,0 +1,26 @@
+@media screen and (min-width: 300px) {
+
+  .portfolio{
+    .category{
+      width: 100%;
+      margin: auto;
+      justify-content: center;
+    }
+
+    li{
+      font-size: .9em;
+      margin: .5em ;
+    }
+
+    p{
+      padding: .5em;
+    }
+
+    .delete{
+      text-align: right;
+    }
+  }
+}
+
+
+

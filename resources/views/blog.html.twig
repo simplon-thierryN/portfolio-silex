@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+{% block section %}
+    <section id="blog">
+        <div class="container">
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                <button class="articleForm">Ajouter un article</button>
+
+                <div id="articleForm" class="update_form">
+                    <span class="back span_img"></span>
+                    {{ form_start(articleForm,{'attr':{'class':'flex' }}) }}
+
+                    <h3>Ajouter un article</h3>
+
+                    <label for="title"> -- Titre -- </label>
+                    {{ form_widget(articleForm.title) }}
+
+                    <label for="content"> -- Description -- </label>
+                    {{ form_widget(articleForm.content) }}
+
+                    <label for="url"> -- Importer une image -- </label>
+                    {{ form_widget(articleForm.url) }}
+
+                    <div class="button">
+                        <button type="submit">save</button>
+                    </div>
+
+                    {{ form_end(articleForm) }}
+                </div>
+            {% endif %}
+            {% for article in blog %}
+                <article class="flex">
+
+                    <div class="img_detail">
+                        <img src="images/blog/{{ article.url }}" alt="{{ article.alt }}">
+                    </div>
+                    <div class="detail flex">
+                        <h3>{{ article.title }}</h3>
+                        <span class="date">{{ article.date|date('d-m-Y') }}</span>
+                        <p class="description">
+                            {{ article.content }}
+                        </p>
+                        <a href="{{ path('article',{'articleId':article.id}) }}">voir plus</a>
+                    </div>
+
+                </article>
+            {% endfor %}
+
+
+        </div>
+
+    </section>
+{% endblock %}

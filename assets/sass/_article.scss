@@ -1,0 +1,41 @@
+@media screen and (min-width: 300px){
+  #article{
+
+    .detail_article{
+      width: 90%;
+      padding: .5em;
+      margin: auto;
+    }
+
+    .date{
+      margin-bottom: 1em;
+      font-size: .8em;
+    }
+
+    .album_article{
+      width: 100%;
+      margin-top: 2em;
+      img{
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px){
+  #article{
+    .detail_article{
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px){
+  #article{
+    .detail_article{
+      width: 40%;
+    }
+  }
+}

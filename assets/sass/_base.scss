@@ -1,0 +1,168 @@
+$grey : #474D54;
+$white : #FFFAF0;
+
+@media screen and (min-width: 300px){
+
+  body{
+    font-size: 1.2em;
+    a{
+      color: $grey;
+    }
+  }
+
+  section{
+    background-color: #FFFFFF;
+  }
+
+  .container{
+    width: 95%;
+    margin: auto;
+  }
+
+  .flex{
+    display: flex;
+    flex-flow: wrap;
+  }
+
+  button{
+    display: block;
+    margin: 1em auto;
+    padding: .5em 1em;
+    border-radius: 4px;
+    border-size:1px;
+  }
+
+  .button{
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 1em auto;
+    text-align: center;
+  }
+
+  h1,h2,h3{
+    width: 100%;
+    padding: .5em 0;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+
+  .fixed{
+    position: fixed;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #FFFFFF;
+    z-index: 100;
+    opacity: .7;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX ----- Span ----- XXXXXXXXXXXXXXXXXXXXXX*/
+
+  .span_img{
+    display: block;
+    margin: .5em;
+    background-size: cover;
+    width:24px;
+    height: 24px;
+  }
+
+  .back{
+    background: url("../images/back-arrow.png")no-repeat center;
+  }
+
+  .del,.delAlbum{
+    background: url("../images/delete.png")no-repeat center;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX ----- Mansonry ----- XXXXXXXXXXXXXXXXXXXXXX*/
+  .grid{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .grid-item {
+    width: 300px;
+    float: left;
+    margin:8px;
+    text-align: center;
+  }
+
+  .album img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /*XXXXXXXXXXXXXXXXXXXXXX ----- Update Form ----- XXXXXXXXXXXXXXXXXXXXXX*/
+  .update_form{
+    display: none;
+    width: 90%;
+    border: 1px solid $grey;
+    position: fixed;
+    top: 34%;
+    left:50%;
+    transform: translate(-50%);
+    background-color: floralwhite;
+    opacity: .95;
+    z-index: 100;
+    form{
+      margin:0 auto;
+      flex-flow: wrap;
+      justify-content:center;
+      text-align: center;
+    }
+
+    label,input,textarea{
+      width: 70%;
+    }
+
+    label{
+      margin: 1em 0 .5em;
+    }
+
+    input, textarea{
+      border:none;
+      border-bottom: 1px solid darkgrey;
+      outline: none;
+    }
+
+    input[type=file] {
+      width: auto;
+    }
+  }
+
+  .confirmation{
+    padding: 1em 0;
+
+    p{
+      margin-bottom: 2em;
+    }
+
+    a{
+      margin: 1em;
+      color: $white;
+      background-color: $grey;
+      border: 1px solid $grey;
+      border-radius: 4px;
+      padding: 0 .5em;
+    }
+  }
+
+  #login{
+    .update_form{
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 600px){
+  .update_form{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1050px){
+  .update_form{
+    width: 40%;
+  }
+}

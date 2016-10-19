@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="{{ asset('/stylesheets/index.css') }}">
+    <title>Portfolio</title>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="flex">
+            <li><a href="{{ path('home') }}">portfolio</a></li>
+            <li><a href="#">tarif</a></li>
+            <li><a href="{{ path('blog') }}">blog</a></li>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">about</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="logo">
+    <img src="{{ asset('images/logo-rond-noir.png') }}" alt="Tony log">
+</div>
+
+
+{% block section %}{% endblock %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script src="{{ asset('js/main.js') }}"></script>
+</body>
+</body>
+</html>

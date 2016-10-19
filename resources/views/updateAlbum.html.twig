@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block section %}
+    <section>
+
+        <div class="container">
+
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                <div class="button flex">
+
+                    <button class="updateAlbum" >Modifier l'album</button>
+
+                    <button class="imgAlbum">Ajouter une image</button>
+
+                    <span class="delAlbum span_img"></span>
+
+                    <div id="delAlbum" class="confirmation update_form ">
+                        <p>Supprimer l'album ?</p>
+                        <a href="{{ path('delete_album',{'albumId':album.id}) }}">Oui</a>
+                        <a class="no" href="#">Non</a>
+                    </div>
+
+                </div>
+
+                <div id="updateAlbum" class="update_form">
+                    <span class="back span_img"></span>
+                    {{ form_start(updateAlbum,{'attr':{'class':'flex'}}) }}
+                    <h3>Modifier l'album</h3>
+
+                    <label for="url"> -- Url -- </label>
+                    {{ form_widget(updateAlbum.url) }}
+
+                    <label for="title"> -- Titre -- </label>
+                    {{ form_widget(updateAlbum.title) }}
+
+                    <label for="category"> -- Catégorie -- </label>
+                    {{ form_widget(updateAlbum.category) }}
+
+                    <div class="button">
+                        <button type="submit">save</button>
+                    </div>
+                    {{ form_end(updateAlbum) }}
+                </div>
+
+                <div id="imgAlbum" class="update_form">
+                    <span class="back span_img"></span>
+                    {{ form_start(addForm,{'attr':{'class':'flex'}})}}
+                    <h3>Ajouter une image</h3>
+
+                    <label for="url"> -- Url -- </label>
+                    {{ form_widget(addForm.url) }}
+
+                    <label for="title"> -- Title -- </label>
+                    {{ form_widget(addForm.title) }}
+
+                    <div class="button">
+                        <button type="submit">save</button>
+                    </div>
+
+                    {{ form_end(addForm) }}
+                </div>
+
+            {% endif %}
+
+            <div class="grid">
+                {% for picture in pictures %}
+                    <div class="grid-item album">
+                        <img src="{{ asset('images/album/'~picture.url) }}" alt="{{ picture.title }}">
+                        <p>{{ picture.title }}</p>
+                        {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="delete" href="{{ path('delete_picture',{'albumId':album.id, 'pictureId':picture.id}) }}"><span class="del span_img"></span></a>
+                        {% endif %}
+
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}
