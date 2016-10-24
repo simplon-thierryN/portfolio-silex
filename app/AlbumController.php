@@ -64,18 +64,13 @@ $app->match('album/{albumId}', function ($albumId, Request $request) use ($app){
     $addPic = new Picture();
 
     $updateForm = $app['form.factory']->create(AlbumType::class, $album);
+    $updateForm->remove('url');
     $addForm = $app['form.factory']->create(PictureType::class,$addPic);
 
     $updateForm->handleRequest($request);
     $addForm->handleRequest($request);
 
     if($updateForm->isSubmitted()){
-        $file = $album->getUrl();
-        $path = __DIR__ . '/../web/images/album/';
-        $filename = $file->getClientOriginalName();
-
-        $file->move($path,$filename);
-        $album->setUrl($filename);
         $app['dao.album']->saveAlbum($album);
         return $app->redirect($albumId);
     }
@@ -99,6 +94,17 @@ $app->match('album/{albumId}', function ($albumId, Request $request) use ($app){
     ));
 })->bind('album');
 
+$app->post('update/img_profil/{albumId}', function ($albumId, Request $request) use ($app){
+    $data = $request->request->get('img');
+    $album = $app['dao.album']->findById($albumId);
+
+    $album->setUrl($data);
+    $title = explode(".", $data);
+    $album->setTitle($title[0]);
+    $app['dao.album']->saveAlbum($album);
+   return "c'est good";
+});
+
 $app->get('delete/album/{albumId}', function($albumId, Request $request) use ($app){
     $app['dao.pic']->deleteAllPic($albumId);
     $app['dao.album']->deleteAlbum($albumId);
@@ -114,22 +120,14 @@ $app->get('delete/album/{albumId}/{pictureId}', function ($albumId, $pictureId, 
 
 
 
-
-
-
-//
 //$app->get('/tarif', function () use ($app){
 //    return $app['twig']->render('tarif.html.twig');
 //})->bind('tarif');
-//
-//$app->get('/blog', function () use ($app){
-//    return $app['twig']->render('blog.html.twig');
-//})->bind('blog');
-//
+
 //$app->get('/contact', function () use ($app){
 //    return $app['twig']->render('contact.html.twig');
 //})->bind('contact');
-//
+
 //$app->get('/about', function () use ($app){
 //    return $app['twig']->render('about.html.twig');
 //})->bind('about');

@@ -120,7 +120,7 @@ $white : #FFFAF0;
 
   @media screen and (min-width: 1050px){
     .grid-item--gigante{
-      width: 1024px;
+      width: 800px;
       height: auto;
       border: 1px solid red;
     }
@@ -142,6 +142,10 @@ $white : #FFFAF0;
       margin:0 auto;
       flex-flow: wrap;
       justify-content:center;
+      text-align: center;
+    }
+
+    h3{
       text-align: center;
     }
 

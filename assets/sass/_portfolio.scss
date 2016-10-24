@@ -12,7 +12,6 @@
       }
     }
 
-
     li{
       font-size: .9em;
       padding: 1em 0;
@@ -26,6 +25,16 @@
 
     .delete{
       text-align: right;
+    }
+  }
+
+  .imgProfil{
+    align-items: flex-start;
+    justify-content: center;
+    img{
+      width:100px;
+      height: auto;
+      margin: 5px;
     }
   }
 }

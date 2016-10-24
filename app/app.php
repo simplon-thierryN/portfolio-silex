@@ -28,7 +28,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
         'secured' => array(
             'pattern' => '^/',
             'anonymous' => true,
-            'logout' => true,
+            'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
             'form' => array('login_path' => '/login_tony', 'check_path' => '/login_check'),
             'users' => (function($app) {
                 return new Portfolio\DAO\UserDAO($app['db']);

@@ -34,16 +34,54 @@ $(function(){
         $('.confirmation').fadeOut();
     });
 
+    /*XXXXXXXXXXXXXXXXXXXXXXXX ---- ajax img profil ---- XXXXXXXXXXXXXXXXXXXXXXXX */
+    var url = window.location.pathname;
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    var src;
+    var img;
 
+
+    $('#article_portrait img').click(function () {
+        src = $(this).attr('src');
+        img = src.substring(src.lastIndexOf('/')+1);
+        console.log('album id => ',id);
+        console.log('album img =>',img);
+
+        $.ajax({
+            type:'POST',
+            url:'/update/img_profil/'+id,
+            data:{img:img},
+            success:function(res){
+                console.log(res);
+            }
+        });
+    });
+
+    $('#blog_portrait img').click(function () {
+        src = $(this).attr('src');
+        img = src.substring(src.lastIndexOf('/')+1);
+        // console.log('profil id =>  ',id);
+        // console.log('profil img => ',img);
+
+        $.ajax({
+            type:'POST',
+            url:'/update/img_blog/'+id,
+            data:{img:img},
+            success:function (res) {
+                console.log(res);
+            }
+
+        });
+    });
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- nav active ---- XXXXXXXXXXXXXXXXXXXXXXXX */
 
     var loc =$(location).attr('href');
     var link = loc.split("/");
-    console.log('link =>',link);
-    console.log('link3 =>',link[3].replace('#',''));
+    // console.log('link =>',link);
+    // console.log('link3 =>',link[3].replace('#',''));
     var toto = link[3].replace('#','/').split('');
-    console.log('toto =>',toto[0]);
+    // console.log('toto =>',toto[0]);
 
     $('header a[href="/'+link[3]+'"]').addClass('active');
     $('header a[href="'+toto[0]+'"]').addClass('active');
@@ -62,8 +100,7 @@ $(function(){
             this.style.height = 0;
             this.style.height = this.scrollHeight + 'px';
         }, false);
-
-        console.log($element);
+        // console.log($element);
     }
 
     if($("textarea").length>0){
@@ -170,12 +207,6 @@ $(function(){
         $grid.masonry();
     });
 
-    //
-    // $('.grid-item').mouseover(function(){
-    //     var grid_height = $('.grid-item img').height();
-    //     $('.grid-item img').css('height',grid_height);
-    //     console.log('height =>', grid_height);
-    // });
 
 });
 

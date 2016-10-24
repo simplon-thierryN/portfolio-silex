@@ -17,6 +17,9 @@
             <li><a href="{{ path('blog') }}">blog</a></li>
             <li><a href="#">contact</a></li>
             <li><a href="#">about</a></li>
+            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li ><a href="{{ path('admin_logout') }}">Logout</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>

@@ -136,7 +136,7 @@ a {
     height: auto; } }
 @media screen and (min-width: 300px) and (min-width: 1050px) {
   .grid-item--gigante {
-    width: 1024px;
+    width: 800px;
     height: auto;
     border: 1px solid red; } }
 @media screen and (min-width: 300px) {
@@ -156,6 +156,8 @@ a {
       margin: 0 auto;
       flex-flow: wrap;
       justify-content: center;
+      text-align: center; }
+    .update_form h3 {
       text-align: center; }
     .update_form label, .update_form input, .update_form textarea {
       width: 70%; }
@@ -315,6 +317,14 @@ a {
     text-align: left;
     padding: .5em 0; }
   .portfolio .delete {
-    text-align: right; } }
+    text-align: right; }
+
+  .imgProfil {
+    align-items: flex-start;
+    justify-content: center; }
+    .imgProfil img {
+      width: 100px;
+      height: auto;
+      margin: 5px; } }
 
 /*# sourceMappingURL=index.css.map */

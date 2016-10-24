@@ -24,12 +24,15 @@
 
                 <div id="updateAlbum" class="update_form">
                     <span class="back span_img"></span>
-                    {{ form_start(updateAlbum,{'attr':{'class':'flex'}}) }}
                     <h3>Modifier l'album</h3>
 
-                    <label for="url"> -- Url -- </label>
-                    {{ form_widget(updateAlbum.url) }}
+                    <div id="article_portrait" class="imgProfil flex">
+                        {% for imgProfil in pictures %}
+                            <img src="{{ asset('images/album/'~imgProfil.url) }}" alt="{{ imgProfil.title }}">
+                        {% endfor%}
+                    </div>
 
+                    {{ form_start(updateAlbum,{'attr':{'class':'flex'}}) }}
                     <label for="title"> -- Titre -- </label>
                     {{ form_widget(updateAlbum.title) }}
 

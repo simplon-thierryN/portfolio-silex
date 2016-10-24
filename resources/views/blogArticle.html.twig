@@ -9,13 +9,36 @@
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
 
                 <div class="button flex">
+                    <button class="updateBlog">Modifier le blog</button>
                     <button class="PictureForm">Ajouter une image</button>
+                </div>
+
+                <div id="updateBlog" class="update_form">
+                    <h3>Modifier l'article</h3>
+                    <div id="blog_portrait" class="imgProfil">
+                        {% for portrait in album %}
+                            <img src="{{ asset('images/blog/'~portrait.url) }}" alt="{{ portrait.title }}">
+                        {% endfor %}
+                    </div>
+                    <span class="back span_img"></span>
+                    {{ form_start(updateBlog,{'attr':{'class':'flex'}}) }}
+
+                    <label for="title"> -- Titre -- </label>
+                    {{ form_widget(updateBlog.title) }}
+
+                    <label for="title"> -- Content -- </label>
+                    {{ form_widget(updateBlog.content) }}
+
+                    <div class="button flex">
+                        <button type="submit">Save</button>
+                    </div>
+                    {{ form_end(updateBlog) }}
                 </div>
 
                 <div id="PictureForm" class="update_form">
                     <span class="back span_img"></span>
                     {{ form_start(addPic,{'attr':{'class':'flex'}}) }}
-                    <h3>update article</h3>
+                    <h3>Ajouter une image</h3>
 
                     <label for="title"> -- Titre -- </label>
                     {{ form_widget(addPic.title) }}

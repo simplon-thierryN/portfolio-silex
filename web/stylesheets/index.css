@@ -191,7 +191,7 @@ a {
 @media screen and (min-width: 300px) and (min-width: 1050px) {
   /* line 122, ../../assets/sass/_base.scss */
   .grid-item--gigante {
-    width: 1024px;
+    width: 800px;
     height: auto;
     border: 1px solid red;
   }
@@ -219,33 +219,37 @@ a {
     text-align: center;
   }
   /* line 148, ../../assets/sass/_base.scss */
+  .update_form h3 {
+    text-align: center;
+  }
+  /* line 152, ../../assets/sass/_base.scss */
   .update_form label, .update_form input, .update_form textarea {
     width: 70%;
   }
-  /* line 152, ../../assets/sass/_base.scss */
+  /* line 156, ../../assets/sass/_base.scss */
   .update_form label {
     margin: 1em 0 .5em;
   }
-  /* line 156, ../../assets/sass/_base.scss */
+  /* line 160, ../../assets/sass/_base.scss */
   .update_form input, .update_form textarea {
     border: none;
     border-bottom: 1px solid darkgrey;
     outline: none;
   }
-  /* line 162, ../../assets/sass/_base.scss */
+  /* line 166, ../../assets/sass/_base.scss */
   .update_form input[type=file] {
     width: auto;
   }
 
-  /* line 167, ../../assets/sass/_base.scss */
+  /* line 171, ../../assets/sass/_base.scss */
   .confirmation {
     padding: 1em 0;
   }
-  /* line 170, ../../assets/sass/_base.scss */
+  /* line 174, ../../assets/sass/_base.scss */
   .confirmation p {
     margin-bottom: 2em;
   }
-  /* line 174, ../../assets/sass/_base.scss */
+  /* line 178, ../../assets/sass/_base.scss */
   .confirmation a {
     margin: 1em;
     color: #FFFAF0;
@@ -255,19 +259,19 @@ a {
     padding: 0 .5em;
   }
 
-  /* line 185, ../../assets/sass/_base.scss */
+  /* line 189, ../../assets/sass/_base.scss */
   #login .update_form {
     display: block;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 192, ../../assets/sass/_base.scss */
+  /* line 196, ../../assets/sass/_base.scss */
   .update_form {
     width: 60%;
   }
 }
 @media screen and (min-width: 1050px) {
-  /* line 198, ../../assets/sass/_base.scss */
+  /* line 202, ../../assets/sass/_base.scss */
   .update_form {
     width: 40%;
   }
@@ -463,19 +467,31 @@ a {
   .portfolio .category a {
     padding: 0 .5em;
   }
-  /* line 16, ../../assets/sass/_portfolio.scss */
+  /* line 15, ../../assets/sass/_portfolio.scss */
   .portfolio li {
     font-size: .9em;
     padding: 1em 0;
     margin: 0 .5em;
   }
-  /* line 22, ../../assets/sass/_portfolio.scss */
+  /* line 21, ../../assets/sass/_portfolio.scss */
   .portfolio p {
     text-align: left;
     padding: .5em 0;
   }
-  /* line 27, ../../assets/sass/_portfolio.scss */
+  /* line 26, ../../assets/sass/_portfolio.scss */
   .portfolio .delete {
     text-align: right;
+  }
+
+  /* line 31, ../../assets/sass/_portfolio.scss */
+  .imgProfil {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  /* line 34, ../../assets/sass/_portfolio.scss */
+  .imgProfil img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
   }
 }

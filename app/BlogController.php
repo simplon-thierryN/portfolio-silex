@@ -59,9 +59,13 @@ $app->match('/blog/article/{articleId}', function ($articleId, Request $request)
     $album = $app['dao.blogPic']->findPicById($articleId);
 
     $picture = new BlogPicture();
-
     $addPic = $app['form.factory']->create(BlogPicType::class,$picture);
+    $updateBlog = $app['form.factory']->create(BlogType::class,$article);
+    $updateBlog->remove('url');
+
     $addPic->handleRequest($request);
+    $updateBlog->handleRequest($request);
+
     if($addPic->isSubmitted()){
         $picture->setBlog($article);
         $file = $picture->getUrl();
@@ -76,34 +80,26 @@ $app->match('/blog/article/{articleId}', function ($articleId, Request $request)
 
         return $app->redirect($articleId);
     }
+
+    if($updateBlog->isSubmitted()){
+        $app['dao.blog']->saveArticle($article);
+        return $app->redirect($articleId);
+    }
     return $app['twig']->render('blogArticle.html.twig',array(
         'article'=>$article,
         'album'=>$album,
-        'addPic'=>$addPic->createView()
+        'addPic'=>$addPic->createView(),
+        'updateBlog'=>$updateBlog->createView()
     ));
 })->bind('article');
 
-//$app->match('/update/article/{articleId}', function ($articleId, Request $request) use ($app){
-//    $article = $app['dao.blog']->findById($articleId);
-//    $picture = new BlogPicture();
-//
-//    $addPic = $app['form.factory']->create(BlogPicType::class,$picture);
-//    $addPic->handleRequest($request);
-//    if($addPic->isSubmitted()){
-//        $picture->setBlog($article);
-//        $file = $picture->getUrl();
-//        $path = __DIR__ . '/../web/images/blog/';
-//        $filename = $file->getClientOriginalName();
-//
-//        $file->move($path,$filename);
-//        $picture->setUrl($filename);
-//        $title = explode(".", $filename);
-//        $picture->setTitle($title[0]);
-//        $app['dao.blogPic']->save($picture);
-//    }
-//
-//    return $app['twig']->render('updateArticle.html.twig',array(
-//        'article'=>$article,
-//        'addPic'=>$addPic->createView()
-//    ));
-//})->bind('update_article');
+$app->post('/update/img_blog/{articleId}', function ($articleId, Request $request) use ($app){
+    $data = $request->request->get('img');
+
+    $article = $app['dao.blog']->findById($articleId);
+    $article->setUrl($data);
+    $title = explode(".", $data);
+    $article->setAlt($title[0]);
+    $app['dao.blog']->saveArticle($article);
+    return "c'est good";});
+
