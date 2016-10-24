@@ -36,7 +36,7 @@
                     <label for="category"> -- Catégorie -- </label>
                     {{ form_widget(updateAlbum.category) }}
 
-                    <div class="button">
+                    <div class="button flex">
                         <button type="submit">save</button>
                     </div>
                     {{ form_end(updateAlbum) }}
@@ -53,7 +53,7 @@
                     <label for="title"> -- Title -- </label>
                     {{ form_widget(addForm.title) }}
 
-                    <div class="button">
+                    <div class="button flex">
                         <button type="submit">save</button>
                     </div>
 
@@ -62,11 +62,13 @@
 
             {% endif %}
 
+            <a href="{{ path('home') }}"><span class="span_img circle_back"></span></a>
+
             <div class="grid">
                 {% for picture in pictures %}
-                    <div class="grid-item album">
+                    <div class="grid-item album grid-album">
                         <img src="{{ asset('images/album/'~picture.url) }}" alt="{{ picture.title }}">
-                        <p>{{ picture.title }}</p>
+                        {#<p>{{ picture.title }}</p>#}
                         {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
                             <a class="delete" href="{{ path('delete_picture',{'albumId':album.id, 'pictureId':picture.id}) }}"><span class="del span_img"></span></a>
                         {% endif %}

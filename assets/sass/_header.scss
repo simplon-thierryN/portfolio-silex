@@ -6,7 +6,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: bolder;
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.8);
     opacity: .7;
     z-index: 100;
   }
@@ -15,32 +15,12 @@
     margin: auto;
     ul{
       width: 100%;
-      margin: .5em auto;
+      margin: 0 auto;
       justify-content: space-around;
     }
-
-    a:after{
-      content:"";
-      display: block;
-      margin-top: .5em;
-      border: 1px solid #3D4C56;
-      transform: scaleX(0);
+    a{
+      padding: 0 .5em;
     }
-
-    a:hover:after{
-      transform: scaleX(1);
-      transition: all .2s ease-in-out;
-    }
-
-    .isActive{
-      color: red;
-    }
-
-    .isActive:after {
-      width: 100%;
-    }
-
-
   }
 
   .logo{
@@ -54,11 +34,13 @@
       height: auto;
     }
   }
+
 }
 
 @media screen and (min-width: 600px){
 
   nav{
+    font-size: 150%;
     ul{
       justify-content: center;
     }

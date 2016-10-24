@@ -4,8 +4,13 @@
     <section id="article">
         <div class="container">
 
+            <a href="{{ path('blog') }}"><span class="span_img circle_back"></span></a>
+
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
-                <button class="PictureForm">Ajouter une image</button>
+
+                <div class="button flex">
+                    <button class="PictureForm">Ajouter une image</button>
+                </div>
 
                 <div id="PictureForm" class="update_form">
                     <span class="back span_img"></span>
@@ -18,7 +23,7 @@
                     <label for="url"> -- Importer une image -- </label>
                     {{ form_widget(addPic.url) }}
 
-                    <div class="button">
+                    <div class="button flex">
                         <button type="submit">Save</button>
                     </div>
                     {{ form_end(addPic) }}

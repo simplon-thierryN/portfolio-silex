@@ -3,7 +3,9 @@
     <section id="blog">
         <div class="container">
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
-                <button class="articleForm">Ajouter un article</button>
+                <div class="button flex">
+                    <button class="articleForm">Ajouter un article</button>
+                </div>
 
                 <div id="articleForm" class="update_form">
                     <span class="back span_img"></span>

@@ -1,4 +1,4 @@
-$grey : #474D54;
+$grey : #314453;
 $white : #FFFAF0;
 
 @media screen and (min-width: 300px){
@@ -11,12 +11,13 @@ $white : #FFFAF0;
   }
 
   section{
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, .8);
   }
 
   .container{
     width: 95%;
     margin: auto;
+    border-top: 1px solid $grey;
   }
 
   .flex{
@@ -26,7 +27,6 @@ $white : #FFFAF0;
 
   button{
     display: block;
-    margin: 1em auto;
     padding: .5em 1em;
     border-radius: 4px;
     border-size:1px;
@@ -52,9 +52,15 @@ $white : #FFFAF0;
     width: 90%;
     left: 50%;
     transform: translate(-50%);
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, .8);
     z-index: 100;
     opacity: .7;
+  }
+
+  .active {
+    background-color: #91BD09;
+    border-radius: 4px;
+    color: #fff;
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Span ----- XXXXXXXXXXXXXXXXXXXXXX*/
@@ -75,6 +81,10 @@ $white : #FFFAF0;
     background: url("../images/delete.png")no-repeat center;
   }
 
+  .circle_back{
+    background: url("../images/circle.png")no-repeat center;
+  }
+
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Mansonry ----- XXXXXXXXXXXXXXXXXXXXXX*/
   .grid{
     width: 100%;
@@ -86,11 +96,34 @@ $white : #FFFAF0;
     float: left;
     margin:8px;
     text-align: center;
+    overflow: hidden;
+
   }
 
   .album img{
     max-width: 100%;
     height: auto;
+    transition: all 2s;
+    overflow: hidden;
+  }
+
+  .album:hover img {
+    //transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 600px){
+    .grid-item--gigante{
+      width: 580px;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: 1050px){
+    .grid-item--gigante{
+      width: 1024px;
+      height: auto;
+      border: 1px solid red;
+    }
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Update Form ----- XXXXXXXXXXXXXXXXXXXXXX*/

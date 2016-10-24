@@ -7,7 +7,8 @@
 
         <div class="container">
             <ul class="category flex">
-                <li  class="index"><a href="#Home">Home</a></li>
+                <li>Filtrer par catégorie:</li>
+                <li class="index"><a class="active" href="#All">All</a></li>
                 {% for category in categories %}
                     <li class="masonry"><a href="#{{ category.alb_category }}">{{ category.alb_category }}</a></li>
                 {% endfor %}
@@ -15,7 +16,9 @@
 
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
 
-            <button class="albumForm">Ajouter un album</button>
+            <div class="button flex">
+                <button class="albumForm">Ajouter un album</button>
+            </div>
 
             <div id="albumForm" class="update_form">
 
@@ -32,7 +35,7 @@
                 <label for="url"> -- Upload Img -- </label>
                 {{ form_widget(albumForm.url) }}
 
-                <div class="button">
+                <div class="button flex">
                     <button class="album" type="submit">Ajouter</button>
                 </div>
                 {{ form_end(albumForm) }}
