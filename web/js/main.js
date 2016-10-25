@@ -7,6 +7,7 @@ $(function(){
     var headerHeight = $("header").height();
     var logoHeight = $('.logo').height();
     var logoWidth = $('.logo').width();
+    var filterBool = false;
 
     $('.addArticle').click(function () {
         $('.update_form').fadeIn();
@@ -34,12 +35,22 @@ $(function(){
         $('.confirmation').fadeOut();
     });
 
+    $('.filter').click(function () {
+        if(filterBool==false){
+            $('.xs').fadeIn();
+            filterBool = true;
+        }
+        else {
+            $('.xs').fadeOut();
+            filterBool = false;
+        }
+    });
+
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- ajax img profil ---- XXXXXXXXXXXXXXXXXXXXXXXX */
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
     var src;
     var img;
-
 
     $('#article_portrait img').click(function () {
         src = $(this).attr('src');
@@ -60,9 +71,6 @@ $(function(){
     $('#blog_portrait img').click(function () {
         src = $(this).attr('src');
         img = src.substring(src.lastIndexOf('/')+1);
-        // console.log('profil id =>  ',id);
-        // console.log('profil img => ',img);
-
         $.ajax({
             type:'POST',
             url:'/update/img_blog/'+id,
@@ -81,8 +89,6 @@ $(function(){
     // console.log('link =>',link);
     // console.log('link3 =>',link[3].replace('#',''));
     var toto = link[3].replace('#','/').split('');
-    // console.log('toto =>',toto[0]);
-
     $('header a[href="/'+link[3]+'"]').addClass('active');
     $('header a[href="'+toto[0]+'"]').addClass('active');
 
@@ -122,11 +128,13 @@ $(function(){
         var calc = 1-scrollTop/opacUntil;
 
         if(scrollTop<180){
-            $('.category').removeClass('fixed');
+            $('.ml').removeClass('fixed');
+            $('.menu_xs').removeClass('fixed');
             $('.container').css('border-top','1px solid');
         }
         else{
-            $('.category').addClass('fixed');
+            $('.ml').addClass('fixed');
+            $('.menu_xs').addClass('fixed');
             $('.fixed').css({
                 'top':headerHeight
             });
@@ -193,6 +201,8 @@ $(function(){
         $grid.masonry('reloadItems');
         $grid.masonry('layout');
         location.hash = cls;
+        $('.xs').fadeOut();
+        console.log('toto');
         e.preventDefault();
     });
 

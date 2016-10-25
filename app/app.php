@@ -64,3 +64,12 @@ $app['dao.blogPic'] = function ($app){
     $blogPicDao->setBlogDAO($app['dao.blog']);
     return $blogPicDao;
 };
+
+
+$app->get('/about', function() use($app){
+    return $app['twig']->render('about.html.twig');
+})->bind('about');
+
+$app->get('/contact', function () use($app){
+    return $app['twig']->render('contact.html.twig');
+})->bind('contact');

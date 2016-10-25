@@ -1,8 +1,6 @@
 @media screen and (min-width: 300px) {
 
   .portfolio{
-
-
     .category{
       width: 100%;
       margin: auto;
@@ -28,6 +26,32 @@
     }
   }
 
+  .ml,.xs{
+    display: none;
+  }
+
+  .xs{
+    flex-direction: column;
+  }
+
+  .menu_xs{
+    width: 100%;
+
+    p{
+      margin: 0 2em;
+    }
+    p:before{
+      content:"";
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      top:20px;
+      left: -30px;
+      background: url('../images/menu.png') no-repeat center;
+    }
+  }
+
   .imgProfil{
     align-items: flex-start;
     justify-content: center;
@@ -39,5 +63,14 @@
   }
 }
 
+@media screen and (min-width: 600px) {
+  .ml{
+    display: flex;
+  }
+
+  .menu_xs{
+    display: none;
+  }
+}
 
 

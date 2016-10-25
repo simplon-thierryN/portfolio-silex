@@ -10,10 +10,6 @@ $white : #FFFAF0;
     }
   }
 
-  section{
-    background-color: rgba(255, 255, 255, .8);
-  }
-
   .container{
     width: 95%;
     margin: auto;
@@ -54,7 +50,6 @@ $white : #FFFAF0;
     transform: translate(-50%);
     background-color: rgba(255, 255, 255, .8);
     z-index: 100;
-    opacity: .7;
   }
 
   .active {
@@ -93,22 +88,26 @@ $white : #FFFAF0;
 
   .grid-item {
     width: 300px;
+    //border:1px solid;
     float: left;
     margin:8px;
     text-align: center;
-    overflow: hidden;
 
+  }
+
+  .grid_overflow{
+    width: 100%;
+    overflow: hidden;
   }
 
   .album img{
     max-width: 100%;
     height: auto;
     transition: all 2s;
-    overflow: hidden;
   }
 
-  .album:hover img {
-    //transform: scale(1.1);
+  .grid_overflow:hover img {
+    transform: scale(1.1);
   }
 
   @media screen and (min-width: 600px){
@@ -122,7 +121,6 @@ $white : #FFFAF0;
     .grid-item--gigante{
       width: 800px;
       height: auto;
-      border: 1px solid red;
     }
   }
 

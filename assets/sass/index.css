@@ -51,9 +51,6 @@ a {
     body a {
       color: #314453; }
 
-  section {
-    background-color: rgba(255, 255, 255, 0.8); }
-
   .container {
     width: 95%;
     margin: auto;
@@ -88,8 +85,7 @@ a {
     left: 50%;
     transform: translate(-50%);
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 100;
-    opacity: .7; }
+    z-index: 100; }
 
   .active {
     background-color: #91BD09;
@@ -122,14 +118,19 @@ a {
     width: 300px;
     float: left;
     margin: 8px;
-    text-align: center;
+    text-align: center; }
+
+  .grid_overflow {
+    width: 100%;
     overflow: hidden; }
 
   .album img {
     max-width: 100%;
     height: auto;
-    transition: all 2s;
-    overflow: hidden; } }
+    transition: all 2s; }
+
+  .grid_overflow:hover img {
+    transform: scale(1.1); } }
 @media screen and (min-width: 300px) and (min-width: 600px) {
   .grid-item--gigante {
     width: 580px;
@@ -137,8 +138,7 @@ a {
 @media screen and (min-width: 300px) and (min-width: 1050px) {
   .grid-item--gigante {
     width: 800px;
-    height: auto;
-    border: 1px solid red; } }
+    height: auto; } }
 @media screen and (min-width: 300px) {
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Update Form ----- XXXXXXXXXXXXXXXXXXXXXX*/
   .update_form {
@@ -199,7 +199,6 @@ a {
     text-transform: uppercase;
     font-weight: bolder;
     background-color: rgba(255, 255, 255, 0.8);
-    opacity: .7;
     z-index: 100; }
 
   nav {
@@ -209,13 +208,13 @@ a {
       margin: 0 auto;
       justify-content: space-around; }
     nav a {
-      padding: 0 .5em; }
+      padding: 0 .2em; }
 
   .logo {
     position: fixed;
     left: 50%;
     z-index: -100;
-    width: 180px; }
+    width: 170px; }
     .logo img {
       max-width: 100%;
       height: auto; } }
@@ -225,7 +224,9 @@ a {
     nav ul {
       justify-content: center; }
     nav li {
-      margin: .5em; } }
+      margin: .5em; }
+    nav a {
+      padding: 0 .5em; } }
 @media screen and (min-width: 300px) {
   #blog article {
     justify-content: space-around;
@@ -303,6 +304,64 @@ a {
   #article .detail_article {
     width: 40%; } }
 @media screen and (min-width: 300px) {
+  .tony {
+    padding: 0 1em;
+    justify-content: space-around;
+    align-items: flex-start; }
+    .tony div {
+      width: 100%;
+      margin-top: 1em; }
+    .tony h2 span {
+      font-size: 70%; }
+
+  .tony_portrait {
+    flex-grow: 2; }
+    .tony_portrait img {
+      max-width: 100%;
+      height: auto; }
+
+  .about_tony p {
+    text-align: justify;
+    line-height: 1.2em;
+    margin: 5px 0; }
+  .about_tony .quote {
+    display: inline-block;
+    font-size: 70%;
+    margin: 0 1em; }
+  .about_tony .quote_left {
+    background-image: url("../images/left-quote.png"); }
+  .about_tony .quote_right {
+    background-image: url("../images/right-quote-symbol.png"); }
+
+  .social a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 5px 0; }
+  .social .fb {
+    background: url("../images/fb.png") no-repeat center; }
+  .social .insta {
+    background: url("../images/insta.png") no-repeat center; } }
+@media screen and (min-width: 600px) {
+  .tony div {
+    width: 40%;
+    padding: 1em; }
+    .tony div.social {
+      padding: 0; }
+
+  #about .tony_portrait {
+    order: 1; } }
+@media screen and (min-width: 1050px) {
+  .tony {
+    width: 80%;
+    margin: auto; }
+
+  .tony_portrait {
+    flex-grow: 2; }
+
+  .about_tony p {
+    line-height: 1.8em; } }
+@media screen and (min-width: 300px) {
   .portfolio .category {
     width: 100%;
     margin: auto;
@@ -319,6 +378,26 @@ a {
   .portfolio .delete {
     text-align: right; }
 
+  .ml, .xs {
+    display: none; }
+
+  .xs {
+    flex-direction: column; }
+
+  .menu_xs {
+    width: 100%; }
+    .menu_xs p {
+      margin: 0 2em; }
+    .menu_xs p:before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      top: 20px;
+      left: -30px;
+      background: url("../images/menu.png") no-repeat center; }
+
   .imgProfil {
     align-items: flex-start;
     justify-content: center; }
@@ -326,5 +405,11 @@ a {
       width: 100px;
       height: auto;
       margin: 5px; } }
+@media screen and (min-width: 600px) {
+  .ml {
+    display: flex; }
+
+  .menu_xs {
+    display: none; } }
 
 /*# sourceMappingURL=index.css.map */

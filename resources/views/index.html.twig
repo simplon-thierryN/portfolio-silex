@@ -6,13 +6,25 @@
     <section class="portfolio">
 
         <div class="container">
-            <ul class="category flex">
+            <ul class="ml category flex">
                 <li>Filtrer par catégorie:</li>
                 <li class="index"><a class="active" href="#All">All</a></li>
                 {% for category in categories %}
                     <li class="masonry"><a href="#{{ category.alb_category }}">{{ category.alb_category }}</a></li>
                 {% endfor %}
             </ul>
+
+            <div class="menu_xs">
+                <div class="filter">
+                    <p>Filtrer par catégorie</p>
+                </div>
+                <ul class="xs category flex">
+                    <li class="index"><a class="active" href="#All">All</a></li>
+                    {% for category in categories %}
+                        <li class="masonry"><a href="#{{ category.alb_category }}">{{ category.alb_category }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
 
@@ -47,9 +59,10 @@
         <div class="grid">
             {% for album in albums %}
                 <div class="album {{ album.category }} grid-item">
-                    <a href="{{ path('album',{'albumId':album.id}) }}"><img src="images/album/{{ album.url }}" alt="tot">
-                        <p>{{ album.title }}</p>
-                    </a>
+                    <div class="grid_overflow">
+                        <a href="{{ path('album',{'albumId':album.id}) }}"><img src="images/album/{{ album.url }}" alt="{{ album.title }}"></a>
+                    </div>
+                    <p>{{ album.title }}</p>
                 </div>
             {% endfor %}
         </div>

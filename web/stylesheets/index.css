@@ -72,24 +72,19 @@ a {
   }
 
   /* line 13, ../../assets/sass/_base.scss */
-  section {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  /* line 17, ../../assets/sass/_base.scss */
   .container {
     width: 95%;
     margin: auto;
     border-top: 1px solid #314453;
   }
 
-  /* line 23, ../../assets/sass/_base.scss */
+  /* line 19, ../../assets/sass/_base.scss */
   .flex {
     display: flex;
     flex-flow: wrap;
   }
 
-  /* line 28, ../../assets/sass/_base.scss */
+  /* line 24, ../../assets/sass/_base.scss */
   button {
     display: block;
     padding: .5em 1em;
@@ -97,7 +92,7 @@ a {
     border-size: 1px;
   }
 
-  /* line 35, ../../assets/sass/_base.scss */
+  /* line 31, ../../assets/sass/_base.scss */
   .button {
     justify-content: space-around;
     align-items: center;
@@ -106,7 +101,7 @@ a {
     text-align: center;
   }
 
-  /* line 43, ../../assets/sass/_base.scss */
+  /* line 39, ../../assets/sass/_base.scss */
   h1, h2, h3 {
     width: 100%;
     padding: .5em 0;
@@ -114,7 +109,7 @@ a {
     font-weight: bolder;
   }
 
-  /* line 50, ../../assets/sass/_base.scss */
+  /* line 46, ../../assets/sass/_base.scss */
   .fixed {
     position: fixed;
     width: 90%;
@@ -122,10 +117,9 @@ a {
     transform: translate(-50%);
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 100;
-    opacity: .7;
   }
 
-  /* line 60, ../../assets/sass/_base.scss */
+  /* line 55, ../../assets/sass/_base.scss */
   .active {
     background-color: #91BD09;
     border-radius: 4px;
@@ -133,7 +127,7 @@ a {
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Span ----- XXXXXXXXXXXXXXXXXXXXXX*/
-  /* line 68, ../../assets/sass/_base.scss */
+  /* line 63, ../../assets/sass/_base.scss */
   .span_img {
     display: block;
     margin: .5em;
@@ -142,34 +136,39 @@ a {
     height: 24px;
   }
 
-  /* line 76, ../../assets/sass/_base.scss */
+  /* line 71, ../../assets/sass/_base.scss */
   .back {
     background: url("../images/back-arrow.png") no-repeat center;
   }
 
-  /* line 80, ../../assets/sass/_base.scss */
+  /* line 75, ../../assets/sass/_base.scss */
   .del, .delAlbum {
     background: url("../images/delete.png") no-repeat center;
   }
 
-  /* line 84, ../../assets/sass/_base.scss */
+  /* line 79, ../../assets/sass/_base.scss */
   .circle_back {
     background: url("../images/circle.png") no-repeat center;
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Mansonry ----- XXXXXXXXXXXXXXXXXXXXXX*/
-  /* line 89, ../../assets/sass/_base.scss */
+  /* line 84, ../../assets/sass/_base.scss */
   .grid {
     width: 100%;
     margin: 0 auto;
   }
 
-  /* line 94, ../../assets/sass/_base.scss */
+  /* line 89, ../../assets/sass/_base.scss */
   .grid-item {
     width: 300px;
     float: left;
     margin: 8px;
     text-align: center;
+  }
+
+  /* line 98, ../../assets/sass/_base.scss */
+  .grid_overflow {
+    width: 100%;
     overflow: hidden;
   }
 
@@ -178,27 +177,30 @@ a {
     max-width: 100%;
     height: auto;
     transition: all 2s;
-    overflow: hidden;
+  }
+
+  /* line 109, ../../assets/sass/_base.scss */
+  .grid_overflow:hover img {
+    transform: scale(1.1);
   }
 }
 @media screen and (min-width: 300px) and (min-width: 600px) {
-  /* line 115, ../../assets/sass/_base.scss */
+  /* line 114, ../../assets/sass/_base.scss */
   .grid-item--gigante {
     width: 580px;
     height: auto;
   }
 }
 @media screen and (min-width: 300px) and (min-width: 1050px) {
-  /* line 122, ../../assets/sass/_base.scss */
+  /* line 121, ../../assets/sass/_base.scss */
   .grid-item--gigante {
     width: 800px;
     height: auto;
-    border: 1px solid red;
   }
 }
 @media screen and (min-width: 300px) {
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Update Form ----- XXXXXXXXXXXXXXXXXXXXXX*/
-  /* line 130, ../../assets/sass/_base.scss */
+  /* line 128, ../../assets/sass/_base.scss */
   .update_form {
     display: none;
     width: 90%;
@@ -211,45 +213,45 @@ a {
     opacity: .95;
     z-index: 100;
   }
-  /* line 141, ../../assets/sass/_base.scss */
+  /* line 139, ../../assets/sass/_base.scss */
   .update_form form {
     margin: 0 auto;
     flex-flow: wrap;
     justify-content: center;
     text-align: center;
   }
-  /* line 148, ../../assets/sass/_base.scss */
+  /* line 146, ../../assets/sass/_base.scss */
   .update_form h3 {
     text-align: center;
   }
-  /* line 152, ../../assets/sass/_base.scss */
+  /* line 150, ../../assets/sass/_base.scss */
   .update_form label, .update_form input, .update_form textarea {
     width: 70%;
   }
-  /* line 156, ../../assets/sass/_base.scss */
+  /* line 154, ../../assets/sass/_base.scss */
   .update_form label {
     margin: 1em 0 .5em;
   }
-  /* line 160, ../../assets/sass/_base.scss */
+  /* line 158, ../../assets/sass/_base.scss */
   .update_form input, .update_form textarea {
     border: none;
     border-bottom: 1px solid darkgrey;
     outline: none;
   }
-  /* line 166, ../../assets/sass/_base.scss */
+  /* line 164, ../../assets/sass/_base.scss */
   .update_form input[type=file] {
     width: auto;
   }
 
-  /* line 171, ../../assets/sass/_base.scss */
+  /* line 169, ../../assets/sass/_base.scss */
   .confirmation {
     padding: 1em 0;
   }
-  /* line 174, ../../assets/sass/_base.scss */
+  /* line 172, ../../assets/sass/_base.scss */
   .confirmation p {
     margin-bottom: 2em;
   }
-  /* line 178, ../../assets/sass/_base.scss */
+  /* line 176, ../../assets/sass/_base.scss */
   .confirmation a {
     margin: 1em;
     color: #FFFAF0;
@@ -259,19 +261,19 @@ a {
     padding: 0 .5em;
   }
 
-  /* line 189, ../../assets/sass/_base.scss */
+  /* line 187, ../../assets/sass/_base.scss */
   #login .update_form {
     display: block;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 196, ../../assets/sass/_base.scss */
+  /* line 194, ../../assets/sass/_base.scss */
   .update_form {
     width: 60%;
   }
 }
 @media screen and (min-width: 1050px) {
-  /* line 202, ../../assets/sass/_base.scss */
+  /* line 200, ../../assets/sass/_base.scss */
   .update_form {
     width: 40%;
   }
@@ -286,50 +288,53 @@ a {
     text-transform: uppercase;
     font-weight: bolder;
     background-color: rgba(255, 255, 255, 0.8);
-    opacity: .7;
     z-index: 100;
   }
 
-  /* line 14, ../../assets/sass/_header.scss */
+  /* line 13, ../../assets/sass/_header.scss */
   nav {
     margin: auto;
   }
-  /* line 16, ../../assets/sass/_header.scss */
+  /* line 15, ../../assets/sass/_header.scss */
   nav ul {
     width: 100%;
     margin: 0 auto;
     justify-content: space-around;
   }
-  /* line 21, ../../assets/sass/_header.scss */
+  /* line 20, ../../assets/sass/_header.scss */
   nav a {
-    padding: 0 .5em;
+    padding: 0 .2em;
   }
 
-  /* line 26, ../../assets/sass/_header.scss */
+  /* line 25, ../../assets/sass/_header.scss */
   .logo {
     position: fixed;
     left: 50%;
     z-index: -100;
-    width: 180px;
+    width: 170px;
   }
-  /* line 32, ../../assets/sass/_header.scss */
+  /* line 31, ../../assets/sass/_header.scss */
   .logo img {
     max-width: 100%;
     height: auto;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 42, ../../assets/sass/_header.scss */
+  /* line 41, ../../assets/sass/_header.scss */
   nav {
     font-size: 150%;
   }
-  /* line 44, ../../assets/sass/_header.scss */
+  /* line 43, ../../assets/sass/_header.scss */
   nav ul {
     justify-content: center;
   }
-  /* line 47, ../../assets/sass/_header.scss */
+  /* line 46, ../../assets/sass/_header.scss */
   nav li {
     margin: .5em;
+  }
+  /* line 49, ../../assets/sass/_header.scss */
+  nav a {
+    padding: 0 .5em;
   }
 }
 @media screen and (min-width: 300px) {
@@ -457,41 +462,179 @@ a {
   }
 }
 @media screen and (min-width: 300px) {
-  /* line 6, ../../assets/sass/_portfolio.scss */
+  /* line 3, ../../assets/sass/_about.scss */
+  .tony {
+    padding: 0 1em;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  /* line 8, ../../assets/sass/_about.scss */
+  .tony div {
+    width: 100%;
+    margin-top: 1em;
+  }
+  /* line 14, ../../assets/sass/_about.scss */
+  .tony h2 span {
+    font-size: 70%;
+  }
+
+  /* line 20, ../../assets/sass/_about.scss */
+  .tony_portrait {
+    flex-grow: 2;
+  }
+  /* line 22, ../../assets/sass/_about.scss */
+  .tony_portrait img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* line 29, ../../assets/sass/_about.scss */
+  .about_tony p {
+    text-align: justify;
+    line-height: 1.2em;
+    margin: 5px 0;
+  }
+  /* line 35, ../../assets/sass/_about.scss */
+  .about_tony .quote {
+    display: inline-block;
+    font-size: 70%;
+    margin: 0 1em;
+  }
+  /* line 41, ../../assets/sass/_about.scss */
+  .about_tony .quote_left {
+    background-image: url("../images/left-quote.png");
+  }
+  /* line 45, ../../assets/sass/_about.scss */
+  .about_tony .quote_right {
+    background-image: url("../images/right-quote-symbol.png");
+  }
+
+  /* line 51, ../../assets/sass/_about.scss */
+  .social a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 5px 0;
+  }
+  /* line 58, ../../assets/sass/_about.scss */
+  .social .fb {
+    background: url("../images/fb.png") no-repeat center;
+  }
+  /* line 62, ../../assets/sass/_about.scss */
+  .social .insta {
+    background: url("../images/insta.png") no-repeat center;
+  }
+}
+@media screen and (min-width: 600px) {
+  /* line 71, ../../assets/sass/_about.scss */
+  .tony div {
+    width: 40%;
+    padding: 1em;
+  }
+  /* line 74, ../../assets/sass/_about.scss */
+  .tony div.social {
+    padding: 0;
+  }
+
+  /* line 81, ../../assets/sass/_about.scss */
+  #about .tony_portrait {
+    order: 1;
+  }
+}
+@media screen and (min-width: 1050px) {
+  /* line 89, ../../assets/sass/_about.scss */
+  .tony {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* line 93, ../../assets/sass/_about.scss */
+  .tony_portrait {
+    flex-grow: 2;
+  }
+
+  /* line 98, ../../assets/sass/_about.scss */
+  .about_tony p {
+    line-height: 1.8em;
+  }
+}
+@media screen and (min-width: 300px) {
+  /* line 4, ../../assets/sass/_portfolio.scss */
   .portfolio .category {
     width: 100%;
     margin: auto;
     justify-content: center;
   }
-  /* line 10, ../../assets/sass/_portfolio.scss */
+  /* line 8, ../../assets/sass/_portfolio.scss */
   .portfolio .category a {
     padding: 0 .5em;
   }
-  /* line 15, ../../assets/sass/_portfolio.scss */
+  /* line 13, ../../assets/sass/_portfolio.scss */
   .portfolio li {
     font-size: .9em;
     padding: 1em 0;
     margin: 0 .5em;
   }
-  /* line 21, ../../assets/sass/_portfolio.scss */
+  /* line 19, ../../assets/sass/_portfolio.scss */
   .portfolio p {
     text-align: left;
     padding: .5em 0;
   }
-  /* line 26, ../../assets/sass/_portfolio.scss */
+  /* line 24, ../../assets/sass/_portfolio.scss */
   .portfolio .delete {
     text-align: right;
   }
 
-  /* line 31, ../../assets/sass/_portfolio.scss */
+  /* line 29, ../../assets/sass/_portfolio.scss */
+  .ml, .xs {
+    display: none;
+  }
+
+  /* line 33, ../../assets/sass/_portfolio.scss */
+  .xs {
+    flex-direction: column;
+  }
+
+  /* line 37, ../../assets/sass/_portfolio.scss */
+  .menu_xs {
+    width: 100%;
+  }
+  /* line 40, ../../assets/sass/_portfolio.scss */
+  .menu_xs p {
+    margin: 0 2em;
+  }
+  /* line 43, ../../assets/sass/_portfolio.scss */
+  .menu_xs p:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 20px;
+    left: -30px;
+    background: url("../images/menu.png") no-repeat center;
+  }
+
+  /* line 55, ../../assets/sass/_portfolio.scss */
   .imgProfil {
     align-items: flex-start;
     justify-content: center;
   }
-  /* line 34, ../../assets/sass/_portfolio.scss */
+  /* line 58, ../../assets/sass/_portfolio.scss */
   .imgProfil img {
     width: 100px;
     height: auto;
     margin: 5px;
+  }
+}
+@media screen and (min-width: 600px) {
+  /* line 67, ../../assets/sass/_portfolio.scss */
+  .ml {
+    display: flex;
+  }
+
+  /* line 71, ../../assets/sass/_portfolio.scss */
+  .menu_xs {
+    display: none;
   }
 }

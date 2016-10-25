@@ -1,0 +1,103 @@
+@media screen and (min-width: 300px){
+
+  .tony{
+    //border: 1px solid black;
+    padding: 0 1em;
+    justify-content: space-around;
+    align-items: flex-start;
+    div{
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    h2{
+      span{
+        font-size: 70%;
+      }
+    }
+  }
+
+  .tony_portrait {
+    flex-grow: 2;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .about_tony{
+    p{
+      text-align: justify;
+      line-height: 1.2em;
+      margin:5px 0;
+    }
+
+    .quote{
+      display: inline-block;
+      font-size: 70%;
+      margin: 0 1em;
+    }
+
+    .quote_left{
+      background-image: url("../images/left-quote.png");
+    }
+
+    .quote_right{
+      background-image: url("../images/right-quote-symbol.png");
+    }
+  }
+
+  .social{
+    a{
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      margin: 5px 0;
+    }
+
+    .fb{
+      background: url("../images/fb.png") no-repeat center;
+    }
+
+    .insta{
+      background: url("../images/insta.png") no-repeat center;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+
+  .tony{
+    div{
+      width: 40%;
+      padding: 1em;
+      &.social{
+        padding: 0;
+      }
+    }
+  }
+
+  #about{
+    .tony_portrait{
+      order:1;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+
+.tony{
+  width: 80%;
+  margin: auto;
+}
+  .tony_portrait{
+    flex-grow: 2;
+  }
+
+  .about_tony{
+    p{
+      line-height: 1.8em;
+    }
+  }
+}
+
