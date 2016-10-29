@@ -30,7 +30,7 @@ footer, header, menu, nav, section {
 /* line 27, ../../assets/sass/_reset.scss */
 body {
   line-height: 1;
-  font-family: 'Open Sans Condensed', Helvetica;
+  font-family: 'Roboto Condensed', Helvetica;
 }
 
 /* line 31, ../../assets/sass/_reset.scss */
@@ -62,20 +62,22 @@ a {
 }
 
 @media screen and (min-width: 300px) {
-  /* line 6, ../../assets/sass/_base.scss */
+  /* line 4, ../../assets/sass/_base.scss */
   body {
-    font-size: 1.2em;
+    font-size: 110%;
+    color: #9E9E9E;
+    visibility: hidden;
   }
   /* line 8, ../../assets/sass/_base.scss */
   body a {
-    color: #314453;
+    color: #9E9E9E;
   }
 
   /* line 13, ../../assets/sass/_base.scss */
   .container {
     width: 95%;
     margin: auto;
-    border-top: 1px solid #314453;
+    border-top: 1px solid #9E9E9E;
   }
 
   /* line 19, ../../assets/sass/_base.scss */
@@ -115,13 +117,13 @@ a {
     width: 90%;
     left: 50%;
     transform: translate(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     z-index: 100;
   }
 
   /* line 55, ../../assets/sass/_base.scss */
   .active {
-    background-color: #91BD09;
+    background-color: #39BDB7;
     border-radius: 4px;
     color: #fff;
   }
@@ -148,7 +150,7 @@ a {
 
   /* line 79, ../../assets/sass/_base.scss */
   .circle_back {
-    background: url("../images/circle.png") no-repeat center;
+    background: url("../images/circle2.png") no-repeat center;
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Mansonry ----- XXXXXXXXXXXXXXXXXXXXXX*/
@@ -204,7 +206,7 @@ a {
   .update_form {
     display: none;
     width: 90%;
-    border: 1px solid #314453;
+    border: 1px solid #9E9E9E;
     position: fixed;
     top: 34%;
     left: 50%;
@@ -235,7 +237,7 @@ a {
   /* line 158, ../../assets/sass/_base.scss */
   .update_form input, .update_form textarea {
     border: none;
-    border-bottom: 1px solid darkgrey;
+    border-bottom: 1px solid #9E9E9E;
     outline: none;
   }
   /* line 164, ../../assets/sass/_base.scss */
@@ -255,8 +257,8 @@ a {
   .confirmation a {
     margin: 1em;
     color: #FFFAF0;
-    background-color: #314453;
-    border: 1px solid #314453;
+    background-color: #9E9E9E;
+    border: 1px solid #9E9E9E;
     border-radius: 4px;
     padding: 0 .5em;
   }
@@ -267,13 +269,18 @@ a {
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 194, ../../assets/sass/_base.scss */
+  /* line 195, ../../assets/sass/_base.scss */
+  body {
+    font-size: 1em;
+  }
+
+  /* line 198, ../../assets/sass/_base.scss */
   .update_form {
     width: 60%;
   }
 }
 @media screen and (min-width: 1050px) {
-  /* line 200, ../../assets/sass/_base.scss */
+  /* line 204, ../../assets/sass/_base.scss */
   .update_form {
     width: 40%;
   }
@@ -286,55 +293,55 @@ a {
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-weight: bolder;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: white;
     z-index: 100;
   }
 
-  /* line 13, ../../assets/sass/_header.scss */
+  /* line 12, ../../assets/sass/_header.scss */
   nav {
     margin: auto;
   }
-  /* line 15, ../../assets/sass/_header.scss */
+  /* line 14, ../../assets/sass/_header.scss */
   nav ul {
     width: 100%;
-    margin: 0 auto;
+    margin: 0.5em auto;
     justify-content: space-around;
   }
-  /* line 20, ../../assets/sass/_header.scss */
+  /* line 19, ../../assets/sass/_header.scss */
   nav a {
-    padding: 0 .2em;
+    padding: .2em;
   }
 
-  /* line 25, ../../assets/sass/_header.scss */
+  /* line 24, ../../assets/sass/_header.scss */
   .logo {
     position: fixed;
     left: 50%;
     z-index: -100;
-    width: 170px;
+    width: 90px;
   }
-  /* line 31, ../../assets/sass/_header.scss */
+  /* line 30, ../../assets/sass/_header.scss */
   .logo img {
     max-width: 100%;
     height: auto;
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 41, ../../assets/sass/_header.scss */
+  /* line 40, ../../assets/sass/_header.scss */
   nav {
     font-size: 150%;
   }
-  /* line 43, ../../assets/sass/_header.scss */
+  /* line 42, ../../assets/sass/_header.scss */
   nav ul {
     justify-content: center;
   }
-  /* line 46, ../../assets/sass/_header.scss */
+  /* line 45, ../../assets/sass/_header.scss */
   nav li {
-    margin: .5em;
+    margin: 0.5em;
   }
-  /* line 49, ../../assets/sass/_header.scss */
-  nav a {
-    padding: 0 .5em;
+
+  /* line 50, ../../assets/sass/_header.scss */
+  .logo {
+    width: 180px;
   }
 }
 @media screen and (min-width: 300px) {
@@ -348,20 +355,21 @@ a {
   #blog article::after {
     content: "";
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 1em auto 0;
-    border: 1px solid #474D54;
+    border-top: 1px solid #9E9E9E;
   }
   /* line 18, ../../assets/sass/_blog.scss */
   #blog a {
-    color: darkslateblue;
+    color: #232123;
     text-decoration: underline;
+    margin: .5em 0;
   }
-  /* line 23, ../../assets/sass/_blog.scss */
+  /* line 24, ../../assets/sass/_blog.scss */
   #blog .update_blog, #blog .detail, #blog .description {
     width: 100%;
   }
-  /* line 27, ../../assets/sass/_blog.scss */
+  /* line 28, ../../assets/sass/_blog.scss */
   #blog .description {
     overflow: hidden;
     line-height: 1.1em;
@@ -370,56 +378,63 @@ a {
     -webkit-box-orient: vertical;
     margin: .5em auto;
   }
-  /* line 36, ../../assets/sass/_blog.scss */
+  /* line 37, ../../assets/sass/_blog.scss */
   #blog .img_detail {
     display: none;
   }
-  /* line 40, ../../assets/sass/_blog.scss */
+  /* line 41, ../../assets/sass/_blog.scss */
   #blog .date {
     font-size: .8em;
-    margin: .5em;
+    position: relative;
+    top: -5px;
+    color: #232123;
+  }
+
+  /* line 50, ../../assets/sass/_blog.scss */
+  .more {
+    background: url("../images/more.png");
   }
 }
 @media screen and (min-width: 600px) {
-  /* line 50, ../../assets/sass/_blog.scss */
+  /* line 58, ../../assets/sass/_blog.scss */
   #blog article {
     justify-content: space-between;
     align-items: center;
   }
-  /* line 54, ../../assets/sass/_blog.scss */
+  /* line 62, ../../assets/sass/_blog.scss */
   #blog .detail {
     width: 65%;
   }
-  /* line 58, ../../assets/sass/_blog.scss */
+  /* line 66, ../../assets/sass/_blog.scss */
   #blog .img_detail {
     display: block;
     width: 30%;
     align-self: center;
   }
-  /* line 62, ../../assets/sass/_blog.scss */
+  /* line 70, ../../assets/sass/_blog.scss */
   #blog .img_detail img {
     max-width: 100%;
     height: auto;
   }
 }
 @media screen and (min-width: 1050px) {
-  /* line 73, ../../assets/sass/_blog.scss */
+  /* line 81, ../../assets/sass/_blog.scss */
   #blog article {
     width: 70%;
     justify-content: space-around;
     align-items: center;
   }
-  /* line 78, ../../assets/sass/_blog.scss */
+  /* line 86, ../../assets/sass/_blog.scss */
   #blog .detail {
     width: 65%;
   }
-  /* line 82, ../../assets/sass/_blog.scss */
+  /* line 90, ../../assets/sass/_blog.scss */
   #blog .img_detail {
     display: block;
     width: 20%;
     align-self: center;
   }
-  /* line 86, ../../assets/sass/_blog.scss */
+  /* line 94, ../../assets/sass/_blog.scss */
   #blog .img_detail img {
     max-width: 100%;
     height: auto;
@@ -466,96 +481,135 @@ a {
   .tony {
     padding: 0 1em;
     justify-content: space-around;
-    align-items: flex-start;
   }
-  /* line 8, ../../assets/sass/_about.scss */
+  /* line 6, ../../assets/sass/_about.scss */
   .tony div {
     width: 100%;
+  }
+  /* line 8, ../../assets/sass/_about.scss */
+  .tony div.tony_portrait, .tony div.about_tony {
     margin-top: 1em;
   }
-  /* line 14, ../../assets/sass/_about.scss */
-  .tony h2 span {
-    font-size: 70%;
+  /* line 13, ../../assets/sass/_about.scss */
+  .tony h2 {
+    font-size: 180%;
+    padding: 0;
+  }
+  /* line 18, ../../assets/sass/_about.scss */
+  .tony .photographe {
+    font-size: 80%;
+    color: #232123;
+    position: relative;
+    top: -5px;
   }
 
-  /* line 20, ../../assets/sass/_about.scss */
-  .tony_portrait {
-    flex-grow: 2;
-  }
-  /* line 22, ../../assets/sass/_about.scss */
+  /* line 28, ../../assets/sass/_about.scss */
   .tony_portrait img {
     max-width: 100%;
     height: auto;
   }
 
-  /* line 29, ../../assets/sass/_about.scss */
-  .about_tony p {
-    text-align: justify;
+  /* line 36, ../../assets/sass/_about.scss */
+  #about .about_tony p {
     line-height: 1.2em;
-    margin: 5px 0;
-  }
-  /* line 35, ../../assets/sass/_about.scss */
-  .about_tony .quote {
-    display: inline-block;
-    font-size: 70%;
-    margin: 0 1em;
   }
   /* line 41, ../../assets/sass/_about.scss */
-  .about_tony .quote_left {
-    background-image: url("../images/left-quote.png");
-  }
-  /* line 45, ../../assets/sass/_about.scss */
-  .about_tony .quote_right {
-    background-image: url("../images/right-quote-symbol.png");
+  #about .quote {
+    font-size: 150%;
   }
 
-  /* line 51, ../../assets/sass/_about.scss */
+  /* line 48, ../../assets/sass/_about.scss */
+  .social p {
+    width: 100%;
+    margin: .5em 0;
+  }
+  /* line 53, ../../assets/sass/_about.scss */
   .social a {
     display: inline-block;
     width: 32px;
     height: 32px;
-    margin: 5px 0;
   }
-  /* line 58, ../../assets/sass/_about.scss */
+  /* line 59, ../../assets/sass/_about.scss */
   .social .fb {
-    background: url("../images/fb.png") no-repeat center;
+    background: url("../images/fb2.png") no-repeat center;
   }
-  /* line 62, ../../assets/sass/_about.scss */
+  /* line 63, ../../assets/sass/_about.scss */
   .social .insta {
-    background: url("../images/insta.png") no-repeat center;
+    background: url("../images/insta2.png") no-repeat center;
   }
 }
 @media screen and (min-width: 600px) {
   /* line 71, ../../assets/sass/_about.scss */
-  .tony div {
+  .tony .tony_portrait, .tony .about_tony {
     width: 40%;
-    padding: 1em;
   }
-  /* line 74, ../../assets/sass/_about.scss */
-  .tony div.social {
-    padding: 0;
+  /* line 75, ../../assets/sass/_about.scss */
+  .tony .tony_portrait {
+    flex-grow: 2;
+  }
+  /* line 79, ../../assets/sass/_about.scss */
+  .tony h2 {
+    font-size: 300%;
+  }
+  /* line 83, ../../assets/sass/_about.scss */
+  .tony .photographe {
+    font-size: 120%;
   }
 
-  /* line 81, ../../assets/sass/_about.scss */
-  #about .tony_portrait {
-    order: 1;
-  }
-}
-@media screen and (min-width: 1050px) {
-  /* line 89, ../../assets/sass/_about.scss */
-  .tony {
-    width: 80%;
-    margin: auto;
+  /* line 88, ../../assets/sass/_about.scss */
+  .about_tony {
+    padding: 1em;
+    align-content: flex-start;
   }
 
   /* line 93, ../../assets/sass/_about.scss */
-  .tony_portrait {
-    flex-grow: 2;
+  .title {
+    align-self: flex-start;
+    width: 100%;
   }
 
-  /* line 98, ../../assets/sass/_about.scss */
-  .about_tony p {
-    line-height: 1.8em;
+  /* line 97, ../../assets/sass/_about.scss */
+  .social {
+    width: 100%;
+    margin-top: 1em;
+  }
+  /* line 101, ../../assets/sass/_about.scss */
+  .social a {
+    display: block;
+    margin: .5em 0;
+  }
+
+  /* line 108, ../../assets/sass/_about.scss */
+  #about .tony_portrait {
+    order: 1;
+  }
+  /* line 112, ../../assets/sass/_about.scss */
+  #about .about_tony {
+    padding: 0 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 119, ../../assets/sass/_about.scss */
+  .tony {
+    justify-content: center;
+  }
+  /* line 121, ../../assets/sass/_about.scss */
+  .tony .tony_portrait {
+    flex-grow: 0;
+  }
+  /* line 124, ../../assets/sass/_about.scss */
+  .tony .about_tony {
+    flex-grow: 0;
+  }
+  /* line 128, ../../assets/sass/_about.scss */
+  .tony .photographe {
+    font-size: 150%;
+  }
+}
+@media screen and (min-width: 1450px) {
+  /* line 136, ../../assets/sass/_about.scss */
+  .tony .tony_portrait, .tony .about_tony {
+    width: 30%;
   }
 }
 @media screen and (min-width: 300px) {
@@ -567,7 +621,7 @@ a {
   }
   /* line 8, ../../assets/sass/_portfolio.scss */
   .portfolio .category a {
-    padding: 0 .5em;
+    padding: 0.2em;
   }
   /* line 13, ../../assets/sass/_portfolio.scss */
   .portfolio li {
@@ -601,18 +655,18 @@ a {
   }
   /* line 40, ../../assets/sass/_portfolio.scss */
   .menu_xs p {
-    margin: 0 2em;
+    margin: 0 1.5em;
   }
   /* line 43, ../../assets/sass/_portfolio.scss */
-  .menu_xs p:before {
+  .menu_xs p::before {
     content: "";
-    display: block;
+    display: inline-block;
     width: 24px;
     height: 24px;
     position: relative;
-    top: 20px;
-    left: -30px;
-    background: url("../images/menu.png") no-repeat center;
+    vertical-align: middle;
+    left: -12px;
+    background: url("../images/menu.png");
   }
 
   /* line 55, ../../assets/sass/_portfolio.scss */

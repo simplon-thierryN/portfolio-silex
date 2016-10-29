@@ -33,7 +33,7 @@
                 <article class="flex">
 
                     <div class="img_detail">
-                        <img src="images/blog/{{ article.url }}" alt="{{ article.alt }}">
+                        <img src="{{ asset('images/blog/'~article.url ) }}" alt="{{ article.alt }}">
                     </div>
                     <div class="detail flex">
                         <h3>{{ article.title }}</h3>
@@ -41,7 +41,7 @@
                         <p class="description">
                             {{ article.content }}
                         </p>
-                        <a href="{{ path('article',{'articleId':article.id}) }}">voir plus</a>
+                        <a href="{{ path('article',{'articleId':article.id}) }}"><span class="span_img more"></span></a>
                     </div>
 
                 </article>

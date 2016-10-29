@@ -1,7 +1,9 @@
 /**
  * Created by nguyenthierry on 02/10/2016.
+ *
  */
-$(function(){
+
+$(window).on('load', function(){
 
     var grid = $('.grid');
     var headerHeight = $("header").height();
@@ -46,6 +48,14 @@ $(function(){
         }
     });
 
+    $(window).resize(function () {
+        var logwidth = $('.logo').width();
+        if(logwidth != logoWidth){
+            location.reload();
+        }
+    });
+
+
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- ajax img profil ---- XXXXXXXXXXXXXXXXXXXXXXXX */
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
@@ -86,11 +96,13 @@ $(function(){
 
     var loc =$(location).attr('href');
     var link = loc.split("/");
-    // console.log('link =>',link);
-    // console.log('link3 =>',link[3].replace('#',''));
-    var toto = link[3].replace('#','/').split('');
+
+    var href = link[3].replace('#','/').split('');
     $('header a[href="/'+link[3]+'"]').addClass('active');
-    $('header a[href="'+toto[0]+'"]').addClass('active');
+    $('header a[href="'+href[0]+'"]').addClass('active');
+    console.log('link =>',link);
+    console.log('link3 =>',link[3].replace('#',''));
+
 
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- Height auto textarea ---- XXXXXXXXXXXXXXXXXXXXXXXX */
@@ -125,8 +137,9 @@ $(function(){
     //fixed nav bar scrollTop & opacity logo
     $(window).scroll(function () {
         var scrollTop = $(window).scrollTop();
-        var calc = 1-scrollTop/opacUntil;
+        var calc = 1-((scrollTop/opacUntil)*3);
 
+        console.log(calc);
         if(scrollTop<180){
             $('.ml').removeClass('fixed');
             $('.menu_xs').removeClass('fixed');
@@ -138,7 +151,6 @@ $(function(){
             $('.fixed').css({
                 'top':headerHeight
             });
-
             $('.container').css('border-top','hidden');
         }
 
@@ -164,6 +176,11 @@ $(function(){
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- MANSORY ---- XXXXXXXXXXXXXXXXXXXXXXXX */
 
+    //
+    // $(".grid-item img").each(function(i) {
+    //     $(this).delay(i * 500).fadeIn();
+    // });
+    //
     var $grid= grid.masonry({
         isAnimated:true,
         animationOptions: {
@@ -202,12 +219,11 @@ $(function(){
         $grid.masonry('layout');
         location.hash = cls;
         $('.xs').fadeOut();
-        console.log('toto');
         e.preventDefault();
     });
 
     if(location.hash != ''){
-        $('a[href="'+location.hash+'"]').trigger('click');
+        $('a[href="'+location.hash+'"]').trigger('click').addClass('active');
     }
 
     $grid.on( 'click', '.grid-album', function() {
@@ -220,4 +236,7 @@ $(function(){
 
 });
 
+$(document).ready(function() {
+        $('body').css('visibility','visible');
+});
 

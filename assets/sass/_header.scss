@@ -5,8 +5,7 @@
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-weight: bolder;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $whiteOpac;
     z-index: 100;
   }
 
@@ -14,11 +13,11 @@
     margin: auto;
     ul{
       width: 100%;
-      margin: 0 auto;
+      margin: 0.5em auto;
       justify-content: space-around;
     }
     a{
-      padding: 0 .2em;
+      padding:.2em;
     }
   }
 
@@ -26,7 +25,7 @@
     position: fixed;
     left:50%;
     z-index: -100;
-    width: 170px;
+    width: 90px;
     //border: 1px solid greenyellow;
     img{
       max-width: 100%;
@@ -44,11 +43,12 @@
       justify-content: center;
     }
     li{
-      margin: .5em;
+      margin: .5em ;
     }
-    a{
-      padding: 0 .5em;
-    }
+  }
+
+  .logo{
+    width: 180px;
   }
 
 }

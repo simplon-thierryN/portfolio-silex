@@ -60,7 +60,7 @@
             {% for album in albums %}
                 <div class="album {{ album.category }} grid-item">
                     <div class="grid_overflow">
-                        <a href="{{ path('album',{'albumId':album.id}) }}"><img src="images/album/{{ album.url }}" alt="{{ album.title }}"></a>
+                        <a href="{{ path('album',{'albumId':album.id}) }}"><img src="{{ asset('images/album/'~album.url) }}" alt="{{ album.title }}"></a>
                     </div>
                     <p>{{ album.title }}</p>
                 </div>
