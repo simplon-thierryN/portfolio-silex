@@ -2,46 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9bf36d89-5b77-4890-8a00-d2f9a21eeecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/sass/_tarif.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/email.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/ContactType.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sass/_about.scss" afterPath="$PROJECT_DIR$/assets/sass/_about-contact.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/sass/_contact.scss" afterPath="$PROJECT_DIR$/assets/sass/_animation.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_base.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_base.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_blog.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_blog.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_header.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_header.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_portfolio.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_portfolio.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_reset.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_reset.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/index.scssc" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/index.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_about-contact.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_about.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_animation.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_contact.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_tarif.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/1c628f038d6e269acfaf523964bb2c2123baaa45/_variable.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Applications/MAMP/htdocs/portfolio/assets/sass/_about-contact.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Applications/MAMP/htdocs/portfolio/assets/sass/_about.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Applications/MAMP/htdocs/portfolio/assets/sass/_animation.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Applications/MAMP/htdocs/portfolio/assets/sass/_tarif.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/.sass-cache/75fcaf1b4852ceb732871195e41567cc2a7d8997/Applications/MAMP/htdocs/portfolio/assets/sass/_variable.scssc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/neoteric/NEOTERIC ∏ EULA.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/neoteric/NEOTERIC∏ - Bold DEMO VERSION.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/font/neoteric/neo-regular.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AlbumController.php" afterPath="$PROJECT_DIR$/app/AlbumController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/BlogController.php" afterPath="$PROJECT_DIR$/app/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/LoginController.php" afterPath="$PROJECT_DIR$/app/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.php" afterPath="$PROJECT_DIR$/app/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_base.scss" afterPath="$PROJECT_DIR$/assets/sass/_base.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_blog.scss" afterPath="$PROJECT_DIR$/assets/sass/_blog.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_header.scss" afterPath="$PROJECT_DIR$/assets/sass/_header.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_portfolio.scss" afterPath="$PROJECT_DIR$/assets/sass/_portfolio.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_reset.scss" afterPath="$PROJECT_DIR$/assets/sass/_reset.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/_variable.scss" afterPath="$PROJECT_DIR$/assets/sass/_variable.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/index.css" afterPath="$PROJECT_DIR$/assets/sass/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/index.css.map" afterPath="$PROJECT_DIR$/assets/sass/index.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/index.scss" afterPath="$PROJECT_DIR$/assets/sass/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/about.html.twig" afterPath="$PROJECT_DIR$/resources/views/about.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/base.html.twig" afterPath="$PROJECT_DIR$/resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blog.html.twig" afterPath="$PROJECT_DIR$/resources/views/blog.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blogArticle.html.twig" afterPath="$PROJECT_DIR$/resources/views/blogArticle.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/contact.html.twig" afterPath="$PROJECT_DIR$/resources/views/contact.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.html.twig" afterPath="$PROJECT_DIR$/resources/views/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tarif.html.twig" afterPath="$PROJECT_DIR$/resources/views/tarif.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/updateAlbum.html.twig" afterPath="$PROJECT_DIR$/resources/views/updateAlbum.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/AlbumDAO.php" afterPath="$PROJECT_DIR$/src/DAO/AlbumDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/BlogPicDAO.php" afterPath="$PROJECT_DIR$/src/DAO/BlogPicDAO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/main.js" afterPath="$PROJECT_DIR$/web/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/stylesheets/index.css" afterPath="$PROJECT_DIR$/web/stylesheets/index.css" />
     </list>
     <ignored path="portfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_tarif.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/sass/_tarif.scss">
+      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/sass/_base.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="1848">
+              <caret line="134" column="15" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -112,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/sass/_base.scss">
+      <file leaf-file-name="_tarif.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/sass/_tarif.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1848">
-              <caret line="134" column="15" selection-start-line="134" selection-start-column="15" selection-end-line="134" selection-end-column="15" />
+            <state relative-caret-position="210">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -483,7 +459,7 @@
       <workItem from="1477671241729" duration="12800000" />
       <workItem from="1477901314846" duration="12177000" />
       <workItem from="1477955769981" duration="63347000" />
-      <workItem from="1478503771207" duration="10068000" />
+      <workItem from="1478503771207" duration="11566000" />
     </task>
     <task id="LOCAL-00001" summary="test v2">
       <created>1477311339084</created>
@@ -513,11 +489,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477770934383</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="version test">
+      <created>1478647570636</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1478647570636</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="405706000" />
+    <option name="totallyTimeSpent" value="407204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -577,7 +560,8 @@
     <MESSAGE value="add update blog, album &amp; logout&#10;update some css" />
     <MESSAGE value="add menu filter for mobile&#10;add contact &amp; about page" />
     <MESSAGE value="modification css + add page contact &amp; about" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification css + add page contact &amp; about" />
+    <MESSAGE value="version test" />
+    <option name="LAST_COMMIT_MESSAGE" value="version test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -673,6 +657,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -706,6 +691,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -713,6 +699,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +862,7 @@
         <state relative-caret-position="105">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding>
-            <element signature="e#97#142#0#PHP" expanded="true" />
+            <element signature="e#97#142#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/sass/_tarif.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding />
         </state>
       </provider>
