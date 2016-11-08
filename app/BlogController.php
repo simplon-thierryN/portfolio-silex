@@ -11,6 +11,9 @@ use Portfolio\Domain\BlogPicture;
 use Portfolio\Form\BlogPicType;
 use Portfolio\Form\BlogType;
 
+/**
+ * Show all blog article & Create blog article
+ */
 $app->match('/blog', function (Request $request) use ($app){
     $blog = $app['dao.blog']->findAll();
 
@@ -48,12 +51,9 @@ $app->match('/blog', function (Request $request) use ($app){
     ));
 })->bind('blog');
 
-$app->get('/delete/article/{articleId}', function ($articleId, Request $request) use ($app){
-    $app['dao.blog']->deleteArticle($articleId);
-    return $app->redirect('/blog');
-})->bind('delete_article');
-
-
+/**
+ * show blog article detail & update this blog article
+ */
 $app->match('/blog/article/{articleId}', function ($articleId, Request $request) use ($app){
     $article = $app['dao.blog']->findById($articleId);
     $album = $app['dao.blogPic']->findPicById($articleId);
@@ -93,6 +93,9 @@ $app->match('/blog/article/{articleId}', function ($articleId, Request $request)
     ));
 })->bind('article');
 
+/**
+ * Update img blog article
+ */
 $app->post('/update/img_blog/{articleId}', function ($articleId, Request $request) use ($app){
     $data = $request->request->get('img');
 
@@ -102,4 +105,20 @@ $app->post('/update/img_blog/{articleId}', function ($articleId, Request $reques
     $article->setAlt($title[0]);
     $app['dao.blog']->saveArticle($article);
     return "c'est good";});
+
+/**
+ * Delete blog article
+ */
+$app->get('/delete/article/{articleId}', function ($articleId, Request $request) use ($app){
+    $app['dao.blog']->deleteArticle($articleId);
+    return $app->redirect('/blog');
+})->bind('delete_article');
+
+/**
+ * Delete img in blog article
+ */
+$app->get('/delete/article/{articleId}/{imgId}', function ($articleId, $imgId, Request $request) use ($app){
+$app['dao.blogPic']->delete($imgId);
+    return $app->redirect('/blog/article/'.$articleId);
+})->bind('deleteImg');
 

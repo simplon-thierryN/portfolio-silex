@@ -17,7 +17,8 @@ $fs = new Filesystem();
 
 
 /**
- * Home
+ * Show all album & add album
+ * Homepage
  */
 $app->match('/', function (Request $request) use ($app){
     $categories = $app['dao.album']->findByCategory();
@@ -52,13 +53,13 @@ $app->match('/', function (Request $request) use ($app){
         'albums'=>$albums,
         'albumForm'=>$albumFormView
     ));
-})->bind('home');
+})->bind('portfolio');
 
 /**
- *
+ *Show details album & update album
  * Details album
  */
-$app->match('album/{albumId}', function ($albumId, Request $request) use ($app){
+$app->match('/portfolio/album/{albumId}', function ($albumId, Request $request) use ($app){
     $album = $app['dao.album']->findById($albumId);
     $pictures = $app['dao.pic']->findAllPic($albumId);
     $addPic = new Picture();
@@ -94,6 +95,9 @@ $app->match('album/{albumId}', function ($albumId, Request $request) use ($app){
     ));
 })->bind('album');
 
+/**
+ * update img album
+ */
 $app->post('update/img_profil/{albumId}', function ($albumId, Request $request) use ($app){
     $data = $request->request->get('img');
     $album = $app['dao.album']->findById($albumId);
@@ -105,6 +109,9 @@ $app->post('update/img_profil/{albumId}', function ($albumId, Request $request) 
    return "c'est good";
 });
 
+/**
+ * delete album & all img in album
+ */
 $app->get('delete/album/{albumId}', function($albumId, Request $request) use ($app){
     $app['dao.pic']->deleteAllPic($albumId);
     $app['dao.album']->deleteAlbum($albumId);
@@ -112,22 +119,12 @@ $app->get('delete/album/{albumId}', function($albumId, Request $request) use ($a
     return $app->redirect('/');
 })->bind('delete_album');
 
+/**
+ *Delete img
+ */
 $app->get('delete/album/{albumId}/{pictureId}', function ($albumId, $pictureId, Request $request) use ($app){
     $app['dao.pic']->deletePicture($pictureId);
-    return $app->redirect('/album/'.$albumId);
+    return $app->redirect('/portfolio/album/'.$albumId);
 })->bind('delete_picture');
 
 
-
-
-//$app->get('/tarif', function () use ($app){
-//    return $app['twig']->render('tarif.html.twig');
-//})->bind('tarif');
-
-//$app->get('/contact', function () use ($app){
-//    return $app['twig']->render('contact.html.twig');
-//})->bind('contact');
-
-//$app->get('/about', function () use ($app){
-//    return $app['twig']->render('about.html.twig');
-//})->bind('about');

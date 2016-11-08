@@ -1,13 +1,14 @@
 {% extends "base.html.twig" %}
 {% block section %}
     <section id="contact">
-        <div class="container">
+        <div class="container slideUp">
             <div class="tony flex">
+
                 <div class="tony_portrait">
                     <img src="{{ asset('images/tony2.jpg') }}" alt="Tony2">
                 </div>
 
-                <div class="about_tony flex">
+                <div class="about_tony flex slideLeft">
                     <div class="title">
                         <h2>Tony Noel</h2>
                         <span class="photographe">PHOTOGRAPHE</span>
@@ -16,12 +17,34 @@
                     <div class="social">
                         <p>tonynoelphotographe@gmail.com</p>
                         <p>06 52 74 97 87</p>
-                        <a class="fb" href="https://www.facebook.com/tonynoelphotographe/?pnref=lhc"></a>
-                        <a class="insta" href="#"></a>
+                        <a class="fb" href="https://www.facebook.com/tonynoelphotographe/?pnref=lhc" target="_blank"></a>
+                        <a class="insta" href="https://www.instagram.com/tony_noel/" target="_blank"></a>
+
+                        {{ form_start(form,{'attr':{'class':'flex'}}) }}
+
+                        <label for="name">Nom: </label>
+                        {{ form_widget(form.name) }}
+
+                        <label for="email">Email: </label>
+                        {{ form_widget(form.email) }}
+
+                        <label for="subject">Sujet: </label>
+                        {{ form_widget(form.subject) }}
+
+                        <label for="message">Message: </label>
+                        {{ form_widget(form.message) }}
+
+                        <div class="button">
+                            <button type="submit">Envoyer</button>
+                        </div>
+                        {{ form_end(form) }}
                     </div>
 
                 </div>
+
             </div>
+
+
         </div>
     </section>
 

@@ -7,6 +7,10 @@
  */
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
+use Symfony\Component\HttpFoundation\Request;
+use Silex\Provider\FormServiceProvider;
+use Portfolio\Form\ContactType;
+use Symfony\Component\BrowserKit\Response;
 
 // Register global error and exception handlers
 ErrorHandler::register();
@@ -37,6 +41,7 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     ),
 ));
 
+
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../resources/views'
 ));
@@ -66,10 +71,73 @@ $app['dao.blogPic'] = function ($app){
 };
 
 
-$app->get('/about', function() use($app){
+$app->match('/about', function () use($app){
     return $app['twig']->render('about.html.twig');
 })->bind('about');
 
-$app->get('/contact', function () use($app){
-    return $app['twig']->render('contact.html.twig');
+
+
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
+//$app['swiftmailer.options'] = array(
+//    'host' => 'smtp.gmail.com',
+//    'port' => '465',
+//    'username' => 'thierryngn@gmail.com',
+//    'password' => 'Touboul.0285',
+//    'encryption' => 'ssl',
+//    'auth_mode' => 'login'
+//);
+$app['swiftmailer.options'] = array(
+    'host' => 'mail.gandi.net',
+    'port' => '587',
+    'username' => '',
+    'password' => '',
+    'encryption' => 'tls',
+    'auth_mode' => 'SMTP'
+);
+
+
+$app->match('/contact', function (Request $request) use($app){
+
+    $data = array(
+        'subject',
+        'name',
+        'email',
+        'message'
+    );
+
+    $formEmail = $app['form.factory']->createBuilder(ContactType::class);
+
+    $form = $formEmail->getForm();
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+        $data = $form->getData();
+
+        $app['swiftmailer.use_spool'] = false;
+
+        $app['mailer']->send(\Swift_Message::newInstance()
+            ->setSubject($data['subject'])
+            ->setFrom(array($data['email']))
+            ->setTo(array('thierryngn@gmail.com'))
+            ->setBody($app['twig']->render('email.html.twig', array(
+                'subject'=>$data['subject'],
+                'name'=>$data['name'],
+                'email'=>$data['email'],
+                'message'=>$data['message']
+            )),'text/html'));
+
+        return $app->redirect('/contact');
+    }
+
+
+    return $app['twig']->render('contact.html.twig',array(
+        'form'=>$form->createView()
+    ));
 })->bind('contact');
+
+$app->get('/tarifs',function () use($app){
+    return $app['twig']->render('tarif.html.twig');
+})->bind('tarifs');
+
+
+return $app;

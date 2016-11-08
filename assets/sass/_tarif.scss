@@ -1,0 +1,97 @@
+@media screen and (min-width: 300px) {
+
+  #tarif{
+
+    h3{
+      //border:1px solid $green;
+      padding: 0;
+    }
+
+    h4, a{
+      //text-transform: uppercase;
+    }
+
+    .price{
+      justify-content: center;
+    }
+
+    article{
+      width: 90%;
+      //border:1px solid $green;
+      margin: 1em auto;
+    }
+  }
+
+  .solo{
+    margin: 1em auto;
+    //border:1px solid red;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      max-width: 90%;
+      height: auto;
+      align-self: flex-start;
+    }
+  }
+
+  .price_detail{
+    border-bottom:1px solid $grey;
+    width: 90%;
+    padding: 1em;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    li{
+      margin: .2em auto;
+    }
+
+  }
+
+
+  .text_left{
+    .price_detail{
+      order: 1;
+    }
+  }
+
+}
+
+@media screen and (min-width: 600px) {
+
+  #tarif{
+    article{
+      font-size: 105%;
+    }
+  }
+
+  .solo{
+    justify-content: space-around;
+    margin:2em auto;
+    img{
+      max-width: 40%;
+      height: auto;
+      //padding: 1em;
+    }
+  }
+
+  .price_detail{
+    width: 30%;
+    //padding: 1em;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .text_left{
+    text-align: right;
+    .price_detail{
+      order: 0;
+    }
+  }
+}
+
+
+

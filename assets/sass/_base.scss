@@ -2,7 +2,7 @@
 @media screen and (min-width: 300px){
 
   body{
-    font-size: 110%;
+    font-size: 105%;
     color: $grey;
     visibility: hidden;
     a{
@@ -10,10 +10,14 @@
     }
   }
 
+  section{
+    padding: 1.2em 0;
+  }
+
   .container{
     width: 95%;
     margin: auto;
-    border-top: 1px solid $grey;
+    //border-top: 1px solid $grey;
   }
 
   .flex{
@@ -39,6 +43,7 @@
   h1,h2,h3{
     width: 100%;
     padding: .5em 0;
+    color: $dark;
     text-transform: uppercase;
     font-weight: bolder;
   }
@@ -53,31 +58,36 @@
   }
 
   .active {
-    background-color: $green;
-    border-radius: 4px;
-    color: #fff;
+    //background-color: $green;
+    //border-radius: 4px;
+    color: $dark;
+    font-weight: bolder;
+    font-size: 120%;
   }
+
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Span ----- XXXXXXXXXXXXXXXXXXXXXX*/
 
   .span_img{
     display: block;
     margin: .5em;
-    background-size: cover;
     width:24px;
     height: 24px;
   }
 
   .back{
     background: url("../images/back-arrow.png")no-repeat center;
+    background-size: contain;
   }
 
   .del,.delAlbum{
     background: url("../images/delete.png")no-repeat center;
+    background-size: contain;
   }
 
   .circle_back{
-    background: url("../images/circle2.png")no-repeat center;
+    background: url("../images/left-arrow.png")no-repeat center;
+    background-size: contain;
   }
 
   /*XXXXXXXXXXXXXXXXXXXXXX ----- Mansonry ----- XXXXXXXXXXXXXXXXXXXXXX*/
@@ -90,9 +100,8 @@
     width: 300px;
     //border:1px solid;
     float: left;
-    margin:8px;
+    //margin:8px;
     text-align: center;
-
   }
 
   .grid_overflow{
@@ -112,14 +121,18 @@
 
   @media screen and (min-width: 600px){
     .grid-item--gigante{
-      width: 580px;
+      width: 450px;
       height: auto;
+    }
+
+    .grid-item {
+      margin:5px;
     }
   }
 
   @media screen and (min-width: 1050px){
     .grid-item--gigante{
-      width: 800px;
+      width: 450px;
       height: auto;
     }
   }
@@ -136,12 +149,14 @@
     background-color: floralwhite;
     opacity: .95;
     z-index: 100;
-    form{
-      margin:0 auto;
-      flex-flow: wrap;
-      justify-content:center;
-      text-align: center;
-    }
+
+  }
+
+  form{
+    margin:0 auto;
+    flex-flow: wrap;
+    justify-content:center;
+    text-align: center;
 
     h3{
       text-align: center;
@@ -165,6 +180,8 @@
       width: auto;
     }
   }
+
+
 
   .confirmation{
     padding: 1em 0;

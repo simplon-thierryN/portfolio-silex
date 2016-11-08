@@ -2,6 +2,10 @@
   #blog{
 
     article{
+      display: none;
+    }
+
+    .blog{
       justify-content: space-around;
       align-items: center;
       margin: 1em auto;
@@ -10,7 +14,7 @@
     article::after{
       content:"";
       display: block;
-      width: 100%;
+      width: 80%;
       margin: 1em auto 0;
       border-top:1px solid $grey;
     }
@@ -48,14 +52,15 @@
   }
 
   .more{
-    background: url('../images/more.png');
+    background: url('../images/right-arrow.png');
+    background-size: contain;
   }
 }
 
 @media screen and (min-width: 600px) {
   #blog{
 
-    article{
+    .blog{
       justify-content: space-between;
       align-items: center;
     }
@@ -78,11 +83,12 @@
 @media screen and (min-width: 1050px) {
   #blog{
 
-    article{
+    .blog{
       width: 70%;
       justify-content: space-around;
       align-items: center;
     }
+
     .detail{
       width: 65%;
     }

@@ -1,8 +1,11 @@
 @media screen and (min-width: 300px){
 
   .tony{
+    width: 90%;
+    margin: 1em auto;
     padding: 0 1em;
     justify-content: space-around;
+    align-items: center;
     div{
       width: 100%;
       &.tony_portrait, &.about_tony{
@@ -24,7 +27,8 @@
   }
 
   .tony_portrait {
-    //border: 1px solid red;
+    width: 40%;
+    align-self: baseline;
     img {
       max-width: 100%;
       height: auto;
@@ -44,7 +48,6 @@
   }
 
   .social{
-
     p{
       width: 100%;
       margin: .5em 0;
@@ -54,30 +57,58 @@
       display: inline-block;
       width: 32px;
       height: 32px;
+      transition: transform .5s ease-in-out;
+    }
+
+    .fb:hover {
+      transform: rotate(360deg);
+      background: url("../images/fb-blue.png") no-repeat center;
+      background-size: contain;
+    }
+
+    .insta:hover {
+      transform: rotate(360deg);
+      background: url("../images/insta-blue.png") no-repeat center;
+      background-size: contain;
     }
 
     .fb{
-      background: url("../images/fb2.png") no-repeat center;
+      background: url("../images/fb-grey.png") no-repeat center;
+      background-size: contain;
     }
 
     .insta{
-      background: url("../images/insta2.png") no-repeat center;
+      background: url("../images/insta-grey.png") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  #contact{
+    form{
+      text-align: left;
+      justify-content: flex-start;
+    }
+
+    button{
+      background-color: $dark;
+      color: $white;
+      border: none;
     }
   }
 }
-
 @media screen and (min-width: 600px) {
+
   .tony{
-    .tony_portrait, .about_tony{
+    .tony_portrait{
       width: 40%;
     }
 
-    .tony_portrait{
-      flex-grow: 2;
+    .about_tony{
+      width: 40%;
     }
 
     h2{
-      font-size: 300%;
+      font-size: 290%;
     }
 
     .photographe{
@@ -86,23 +117,21 @@
   }
 
   .about_tony{
-    padding: 1em;
-    align-content: flex-start;
+    font-size: 90%;
   }
 
   .title{
-    align-self: flex-start;
     width: 100%;
   }
   .social{
     width: 100%;
     margin-top: 1em;
-
     a{
-      display: block;
+      //display: block;
       margin: .5em 0;
     }
-  }
+
+    }
 
   #about{
     .tony_portrait{
@@ -110,19 +139,22 @@
     }
 
     .about_tony{
-      padding: 0 1em;
+      p{
+        line-height: 2em;
+      }
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
+
   .tony{
-    justify-content: center;
+    justify-content: space-around;
     .tony_portrait{
-      flex-grow: 0;
+      width: 40%;
     }
     .about_tony{
-      flex-grow: 0;
+      width: 30%;
     }
 
     .photographe{
@@ -133,8 +165,8 @@
 
 @media screen and (min-width: 1450px) {
   .tony{
-    .tony_portrait, .about_tony{
-      width: 30%;
+    .about_tony{
+      font-size: 150%;
     }
   }
 }

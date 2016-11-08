@@ -15,5 +15,6 @@ require __DIR__.'/../app/app.php';
 require __DIR__.'/../app/AlbumController.php';
 require __DIR__.'/../app/LoginController.php';
 require __DIR__.'/../app/BlogController.php';
+//require __DIR__.'/../app/MailController.php';
 
 $app->run();

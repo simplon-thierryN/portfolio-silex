@@ -22,32 +22,29 @@
                     <label for="url"> -- Importer une image -- </label>
                     {{ form_widget(articleForm.url) }}
 
-                    <div class="button">
+                    <div class="button flex">
                         <button type="submit">save</button>
                     </div>
 
                     {{ form_end(articleForm) }}
                 </div>
             {% endif %}
-            {% for article in blog %}
-                <article class="flex">
 
-                    <div class="img_detail">
-                        <img src="{{ asset('images/blog/'~article.url ) }}" alt="{{ article.alt }}">
-                    </div>
-                    <div class="detail flex">
-                        <h3>{{ article.title }}</h3>
-                        <span class="date">{{ article.date|date('d-m-Y') }}</span>
-                        <p class="description">
-                            {{ article.content }}
-                        </p>
-                        <a href="{{ path('article',{'articleId':article.id}) }}"><span class="span_img more"></span></a>
-                    </div>
-
-                </article>
-            {% endfor %}
-
-
+                {% for article in blog %}
+                    <article>
+                        <div class="blog flex">
+                            <img class="img_detail" src="{{ asset('images/blog/'~article.url ) }}" alt="{{ article.alt }}">
+                            <div class="detail">
+                                <h3>{{ article.title }}</h3>
+                                <span class="date">{{ article.date|date('d-m-Y') }}</span>
+                                <p class="description">
+                                    {{ article.content }}
+                                </p>
+                                <a href="{{ path('article',{'articleId':article.id}) }}"><span class="span_img more"></span></a>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
         </div>
 
     </section>

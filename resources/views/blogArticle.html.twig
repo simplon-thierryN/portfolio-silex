@@ -64,6 +64,7 @@
                     {% for picture in album %}
                         <div class="picture_blog">
                             <img src="{{ asset('images/blog/'~picture.url) }}" alt="{{ picture.title }}">
+                            <a href="{{ path('deleteImg',{'articleId':article.id, 'imgId':picture.id}) }}"><span class="del span_img"></span></a>
                         </div>
                     {% endfor %}
                 </div>

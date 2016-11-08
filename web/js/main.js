@@ -2,13 +2,10 @@
  * Created by nguyenthierry on 02/10/2016.
  *
  */
-
 $(window).on('load', function(){
 
     var grid = $('.grid');
-    var headerHeight = $("header").height();
-    var logoHeight = $('.logo').height();
-    var logoWidth = $('.logo').width();
+
     var filterBool = false;
 
     $('.addArticle').click(function () {
@@ -56,6 +53,11 @@ $(window).on('load', function(){
     });
 
 
+    // var tonyHeight = $('.tony').height();
+    // console.log('tonyHeight ',tonyHeight);
+    // $('.tony').css('height',tonyHeight*1.5);
+
+
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- ajax img profil ---- XXXXXXXXXXXXXXXXXXXXXXXX */
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
@@ -94,14 +96,44 @@ $(window).on('load', function(){
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- nav active ---- XXXXXXXXXXXXXXXXXXXXXXXX */
 
+    //add class active nav portfolio
     var loc =$(location).attr('href');
     var link = loc.split("/");
 
     var href = link[3].replace('#','/').split('');
-    $('header a[href="/'+link[3]+'"]').addClass('active');
-    $('header a[href="'+href[0]+'"]').addClass('active');
-    console.log('link =>',link);
-    console.log('link3 =>',link[3].replace('#',''));
+    if(link[3]=='portfolio'){
+        $('header a[href="/"]').addClass('active');
+    }
+    else{
+        $('header a[href="/'+link[3]+'"]').addClass('active');
+    }
+    // $('header a[href="'+href[0]+'"]').addClass('active');
+
+    console.log('link ',link);
+    console.log('link3 ',link[3]);
+    console.log('href ',href[0]);
+    //add class active nav price
+    var urlTarif = link[3].replace('#','/');
+    var navTarif = urlTarif.split('/');
+
+    if(link[3]=='tarifs'){
+        $('.evenement').addClass('hidden').fadeOut();
+        $('.pro').addClass('hidden').fadeOut();
+    }
+
+    $('header a[href="/'+navTarif[0]+'"]').addClass('active');
+    $('.price a[href="'+navTarif[01]+'"]').addClass('active');
+
+    $('.price a').click(function(){
+        var menuActive = $(this).attr('href').replace('#','');
+        $('.price a').removeClass('active');
+        $(this).addClass('active');
+        $('.menu_price').find('.hidden').fadeIn();
+        $('.menu_price').find('article').removeClass('hidden');
+        $('.menu_price').find('article:not(.'+menuActive+')').addClass('hidden').stop().fadeOut();
+        $('.xs').fadeOut();
+    });
+
 
 
 
@@ -129,27 +161,54 @@ $(window).on('load', function(){
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- SCROLL ---- XXXXXXXXXXXXXXXXXXXXXXXX */
     var logo = $('.logo');
-    var opacStart = 40;
+    var headerHeight = $("header").height();
+    var logoHeight = $('.logo').height();
+    var logoWidth = $('.logo').width();
     var opacUntil = 220;
 
-
+    // console.log('logoWidth ',logoWidth);
+    console.log('section ',$('section').scrollTop());
 
     //fixed nav bar scrollTop & opacity logo
     $(window).scroll(function () {
+
+        var headerHeightFixed = $("header").height();
         var scrollTop = $(window).scrollTop();
         var calc = 1-((scrollTop/opacUntil)*3);
 
-        console.log(calc);
-        if(scrollTop<180){
+        // if(scrollTop<headerHeight){
+        //     $('header').removeClass('headerFixed');
+        // }
+        // else if (scrollTop>(headerHeight)){
+        //     $('header').addClass('headerFixed');
+        // }
+
+        if(scrollTop<logoHeight){
             $('.ml').removeClass('fixed');
             $('.menu_xs').removeClass('fixed');
-            $('.container').css('border-top','1px solid');
+            // $('.container').css('border-top','1px solid');
         }
-        else{
+        else if(scrollTop>logoHeight){
+            // log('add fixed');
             $('.ml').addClass('fixed');
             $('.menu_xs').addClass('fixed');
             $('.fixed').css({
                 'top':headerHeight
+            });
+            $('.container').css('border-top','hidden');
+        }
+
+        if(scrollTop<headerHeight){
+            $('.ml').removeClass('fixed');
+            $('.menu_xs').removeClass('fixed');
+            // $('.container').css('border-top','1px solid');
+        }
+        else if(logo.length<=0 && scrollTop>headerHeight){
+            // log('add fixed');
+            $('.ml').addClass('fixed');
+            $('.menu_xs').addClass('fixed');
+            $('.fixed').css({
+                'top':headerHeightFixed
             });
             $('.container').css('border-top','hidden');
         }
@@ -164,23 +223,25 @@ $(window).on('load', function(){
 
     // add margin top logo
     logo.css({
-        'top':headerHeight * 1.5,
+        'top': headerHeight,
         'margin-left': -logoWidth/2
     });
+console.log('logo ',logoHeight);
 
+    console.log('headerHeight ',headerHeight);
     // add margin top section
-    $('section').css({
-        'margin-top': logoHeight + headerHeight * 2
-    });
-
+    if(logo.length<=0){
+        $('section').css({
+            'margin-top': headerHeight
+        });
+    }else{
+        $('section').css({
+            'margin-top': logoHeight + headerHeight
+        });
+    }
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- MANSORY ---- XXXXXXXXXXXXXXXXXXXXXXXX */
 
-    //
-    // $(".grid-item img").each(function(i) {
-    //     $(this).delay(i * 500).fadeIn();
-    // });
-    //
     var $grid= grid.masonry({
         isAnimated:true,
         animationOptions: {
@@ -208,9 +269,10 @@ $(window).on('load', function(){
 
 
 // add class active on link categgory & fadeIn/fadeOut grid-item
-    $('.category a').click(function (e) {
+    $('.portfolio a').click(function (e) {
         var cls = $(this).attr('href').replace('#','');
-        $('.category a').removeClass('active');
+        console.log(cls)
+        $('.portfolio a').removeClass('active');
         $(this).addClass('active');
         grid.find('.hidden').fadeIn();
         grid.find('.grid-item').removeClass('hidden');
@@ -222,9 +284,6 @@ $(window).on('load', function(){
         e.preventDefault();
     });
 
-    if(location.hash != ''){
-        $('a[href="'+location.hash+'"]').trigger('click').addClass('active');
-    }
 
     $grid.on( 'click', '.grid-album', function() {
         // change size of item via class
@@ -233,10 +292,22 @@ $(window).on('load', function(){
         $grid.masonry();
     });
 
-
+    if(location.hash != ''){
+        $('a[href="'+location.hash+'"]').trigger('click').addClass('active');
+    }
 });
 
 $(document).ready(function() {
-        $('body').css('visibility','visible');
+    $('body').css('visibility','visible');
+
+    $("#blog article").each(function(i) {
+        $(this).delay(500 * i).fadeIn(500);
+    });
+
+
+    $("img").on("contextmenu",function(e){
+        return false;
+    });
+
 });
 

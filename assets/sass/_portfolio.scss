@@ -1,13 +1,11 @@
 @media screen and (min-width: 300px) {
-
-  .portfolio{
-    .category{
-      width: 100%;
-      margin: auto;
-      justify-content: center;
-      a{
-        padding: 0.2em;
-      }
+  .category{
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: baseline;
+    a{
+      padding: 0.2em;
     }
 
     li{
@@ -15,7 +13,8 @@
       padding: 1em 0;
       margin: 0 .5em;
     }
-
+  }
+  #portfolio{
     p{
       text-align: left;
       padding: .5em 0;
@@ -38,8 +37,9 @@
     width: 100%;
 
     p{
-      margin: 0 1.5em;
+      margin: .5em 1.5em;
     }
+
     p::before{
       content:"";
       display: inline-block;

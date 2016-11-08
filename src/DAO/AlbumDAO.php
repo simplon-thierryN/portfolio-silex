@@ -12,6 +12,7 @@ use Portfolio\Domain\Album;
 class AlbumDAO extends DAO {
 
     /**
+     * Find all category
      * @return array Category
      */
     public function findByCategory(){
@@ -21,6 +22,7 @@ class AlbumDAO extends DAO {
     }
 
     /**
+     * Find all album
      * @return array Album
      */
     public function findAllAlbum(){
@@ -37,6 +39,7 @@ class AlbumDAO extends DAO {
     }
 
     /**
+     * Find album by id
      * @param $albumId
      * @return Album
      */
@@ -49,6 +52,7 @@ class AlbumDAO extends DAO {
     }
 
     /**
+     * Delete album
      * Delete Album
      * @param $albumId
      */
@@ -57,6 +61,7 @@ class AlbumDAO extends DAO {
     }
 
     /**
+     * construct object album
      * @param $row
      * @return Album
      */
@@ -70,6 +75,7 @@ class AlbumDAO extends DAO {
     }
 
     /**
+     * Save album
      * @param Album $album
      */
     public function saveAlbum(Album $album){

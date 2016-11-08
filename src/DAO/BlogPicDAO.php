@@ -16,10 +16,16 @@ class BlogPicDAO extends DAO {
      */
     private $blogDAO;
 
-   public function setBlogDAO(BlogDAO $blogDAO){
-       $this->blogDAO = $blogDAO;
-   }
 
+    public function setBlogDAO(BlogDAO $blogDAO){
+        $this->blogDAO = $blogDAO;
+    }
+
+    /**
+     * Find all img by blog id
+     * @param $articleId
+     * @return array
+     */
     public function findPicById($articleId){
 
         $article = $this->blogDAO->findById($articleId);
@@ -38,6 +44,10 @@ class BlogPicDAO extends DAO {
         return $blogPic;
     }
 
+    /**
+     * Save img in blog article
+     * @param BlogPicture $blogPicture
+     */
     public function save(BlogPicture $blogPicture){
         $pictureData = array(
             'pic_url'=>$blogPicture->getUrl(),
@@ -48,6 +58,15 @@ class BlogPicDAO extends DAO {
         $id = $this->getDb()->lastInsertId();
         $blogPicture->setId($id);
     }
+
+    /**
+     * Delete img from blog article
+     * @param $imgId
+     */
+    public function delete($imgId){
+        $this->getDb()->delete('blog_pic',array('pic_id' => $imgId));
+    }
+
 
     protected function buildObject($row)
     {
