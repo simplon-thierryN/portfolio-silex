@@ -1,53 +1,102 @@
 @media screen and (min-width: 300px){
 
-  .tony{
-    width: 90%;
-    margin: 1em auto;
-    padding: 0 1em;
-    justify-content: space-around;
-    align-items: center;
-    div{
+  #about,#contact {
+    .tony {
       width: 100%;
-      &.tony_portrait, &.about_tony{
-        margin-top: 1em;
+      margin: 1em auto;
+      justify-content: space-around;
+      align-items: center;
+      div {
+        //width: 100%;
+        &.tony_portrait, &.about_tony {
+          margin-top: 1em;
+        }
+      }
+
+      h2 {
+        font-size: 150%;
+        padding: 0;
+      }
+
+      h3 {
+        text-align: center;
+        margin-bottom: 2em;
       }
     }
 
-    h2{
-      font-size: 180%;
-      padding: 0;
+    .tony_portrait {
+      width: 30%;
+      align-self: baseline;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
+  }
+
+  #contact{
 
     .photographe{
-      font-size: 80%;
       color: $black;
       position: relative;
       top: -5px;
     }
-  }
 
-  .tony_portrait {
-    width: 40%;
-    align-self: baseline;
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  #about{
     .about_tony{
-      p{
-        line-height: 1.2em;
-      }
-  }
+      width: 60%;
+      font-size: 90%;
+    }
 
-    .quote{
-      font-size: 150%;
+    .contact_me{
+      width: 90%;
+      margin: 2em auto;
+    }
+    .formulaire{
+      width: 100%;
+    }
+    form{
+      width: 90%;
+      text-align: left;
+      justify-content: center;
+    }
+
+    input{
+      border: 1px solid $grey;
+      width: 30%;
+      height: 3em;
+      flex-grow: 1;
+    }
+
+    input:nth-child(2){
+      border-left: none;
+    }
+
+    .sujet{
+      width: 100%;
+      border-top: none;
+    }
+
+    textarea{
+      border: 1px solid $grey;
+      border-top: none;
+      resize: none;
+      width: 100%;
+      height: 8em;
+    }
+
+    button{
+      background-color: $grey;
+      color: $white;
+      border: none;
+      //margin-left: 2em ;
+    }
+    button:hover{
+      background-color: $dark;
     }
   }
 
   .social{
+    width: 100%;
     p{
       width: 100%;
       margin: .5em 0;
@@ -62,111 +111,125 @@
 
     .fb:hover {
       transform: rotate(360deg);
-      background: url("../images/fb-blue.png") no-repeat center;
+      background: url("../images/icons/fb-blue.png") no-repeat center;
       background-size: contain;
     }
 
     .insta:hover {
       transform: rotate(360deg);
-      background: url("../images/insta-blue.png") no-repeat center;
+      background: url("../images/icons/insta-blue.png") no-repeat center;
       background-size: contain;
     }
 
     .fb{
-      background: url("../images/fb-grey.png") no-repeat center;
+      background: url("../images/icons/fb-grey.png") no-repeat center;
       background-size: contain;
     }
 
     .insta{
-      background: url("../images/insta-grey.png") no-repeat center;
+      background: url("../images/icons/insta-grey.png") no-repeat center;
       background-size: contain;
-    }
-  }
-
-  #contact{
-    form{
-      text-align: left;
-      justify-content: flex-start;
-    }
-
-    button{
-      background-color: $dark;
-      color: $white;
-      border: none;
-    }
-  }
-}
-@media screen and (min-width: 600px) {
-
-  .tony{
-    .tony_portrait{
-      width: 40%;
-    }
-
-    .about_tony{
-      width: 40%;
-    }
-
-    h2{
-      font-size: 290%;
     }
 
     .photographe{
-      font-size: 120%;
+      color: $grey;
     }
   }
 
-  .about_tony{
-    font-size: 90%;
-  }
-
-  .title{
-    width: 100%;
-  }
-  .social{
-    width: 100%;
-    margin-top: 1em;
-    a{
-      //display: block;
-      margin: .5em 0;
-    }
-
-    }
 
   #about{
+
     .tony_portrait{
-      order:1;
+      width: 100%;
+    }
+    .about_tony{
+      //border: 1px solid red;
+      li{
+        margin: 1em 2em;
+      }
+      li:before{
+        content: '';
+        display: block;
+        background: url("../images/icons/logo-rond-noir.png")no-repeat center;
+        background-size: contain;
+        //border: 1px solid red;
+        width: 10px;
+        height: 10px;
+        position: relative;
+        left: -20px;
+        top:10px;
+      }
+    }
+
+    .quote{
+      font-size: 150%;
+    }
+
+
+  }
+
+}
+@media screen and (min-width: 600px) {
+
+  #contact{
+
+    .tony_portrait{
+      width: 40%;
+      text-align: right;
+      img{
+        max-width: 50%;
+      }
     }
 
     .about_tony{
-      p{
-        line-height: 2em;
-      }
+      width: 40%;
+      font-size: 110%;
+    }
+
+  }
+
+  #about{
+    .about_tony{
+      width: 40%;
+      padding: 1em 0;
+      align-self: flex-start;
+    }
+
+    .tony_portrait{
+      width: 50%;
+      //order:1;
     }
   }
 }
 
 @media screen and (min-width: 1024px) {
 
-  .tony{
-    justify-content: space-around;
-    .tony_portrait{
-      width: 40%;
-    }
-    .about_tony{
-      width: 30%;
-    }
-
-    .photographe{
-      font-size: 150%;
+  #about,#contact {
+    .tony {
+      width: 80%;
     }
   }
-}
 
-@media screen and (min-width: 1450px) {
-  .tony{
-    .about_tony{
-      font-size: 150%;
+  #contact{
+
+    .tony_portrait{
+      width: 40%;
+      text-align: right;
+      img{
+        max-width: 35%;
+      }
     }
+
+    .about_tony{
+      width: 40%;
+      text-align: left;
+      font-size: 110%;
+    }
+
+    .contact_me, .formulaire{
+      text-align: center;
+      width: 70%;
+    }
+
   }
 }

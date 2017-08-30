@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 
+
 class AlbumType extends AbstractType{
 
     public function buildForm(FormBuilderInterface $builder, array $options)

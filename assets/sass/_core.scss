@@ -2,8 +2,8 @@
 @media screen and (min-width: 300px){
 
   body{
-    font-size: 105%;
-    color: $grey;
+    font-size: 90%;
+    color: $black;
     visibility: hidden;
     a{
       color: $grey;
@@ -11,13 +11,12 @@
   }
 
   section{
-    padding: 1.2em 0;
+    padding: .5em 0;
   }
 
   .container{
     width: 95%;
     margin: auto;
-    //border-top: 1px solid $grey;
   }
 
   .flex{
@@ -43,7 +42,7 @@
   h1,h2,h3{
     width: 100%;
     padding: .5em 0;
-    color: $dark;
+    color: $black;
     text-transform: uppercase;
     font-weight: bolder;
   }
@@ -53,16 +52,19 @@
     width: 90%;
     left: 50%;
     transform: translate(-50%);
-    background-color: $whiteOpac;
+    background-color: white;
     z-index: 100;
   }
 
   .active {
-    //background-color: $green;
-    //border-radius: 4px;
-    color: $dark;
-    font-weight: bolder;
+    color: $black;
+    //font-weight: bolder;
     font-size: 120%;
+  }
+
+  .mention{
+    margin: 2em 0 1em;
+    text-align: center;
   }
 
 
@@ -71,22 +73,22 @@
   .span_img{
     display: block;
     margin: .5em;
-    width:24px;
-    height: 24px;
+    width:20px;
+    height: 20px;
   }
 
   .back{
-    background: url("../images/back-arrow.png")no-repeat center;
+    background: url("../images/icons/back-arrow.png")no-repeat center;
     background-size: contain;
   }
 
   .del,.delAlbum{
-    background: url("../images/delete.png")no-repeat center;
+    background: url("../images/icons/delete.png")no-repeat center;
     background-size: contain;
   }
 
   .circle_back{
-    background: url("../images/left-arrow.png")no-repeat center;
+    background: url("../images/icons/left-arrow.png")no-repeat center;
     background-size: contain;
   }
 
@@ -106,33 +108,100 @@
 
   .grid_overflow{
     width: 100%;
+
     overflow: hidden;
+    //border:1px solid blue;
+  }
+
+  .grid_overflow a{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    //border:1px solid forestgreen;
   }
 
   .album img{
     max-width: 100%;
-    height: auto;
+    height:auto;
     transition: all 2s;
+    //border:1px solid red;
   }
 
   .grid_overflow:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
-  @media screen and (min-width: 600px){
-    .grid-item--gigante{
-      width: 450px;
+  @media screen and (min-width: 600px) {
+    .grid-item--gigante {
+      width: 100%;
       height: auto;
     }
 
     .grid-item {
-      margin:5px;
+      margin: 5px;
+    }
+
+    .album_title {
+      display: none;
+    }
+
+    .titleSlideOut{
+      background-color: $whiteOpac;
+      -webkit-animation-name: slideInDown;
+      animation-name: slideInDown;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1.5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+
+    @keyframes slideInDown {
+      0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+
+      }
+      35%{
+        visibility: hidden;
+      }
+      100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        visibility: hidden;
+      }
+    }
+    //
+    .titleSlideIn {
+      display: block;
+      position: relative;
+      top:-2em;
+      background-color: $whiteOpac;
+      -webkit-animation-name: slideInUp;
+      animation-name: slideInUp;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    @keyframes slideInUp {
+      0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        visibility: visible;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
     }
   }
 
   @media screen and (min-width: 1050px){
     .grid-item--gigante{
-      width: 450px;
+      width: 100%;
       height: auto;
     }
   }
@@ -143,12 +212,17 @@
     width: 90%;
     border: 1px solid $grey;
     position: fixed;
-    top: 34%;
+    top: 20%;
     left:50%;
     transform: translate(-50%);
     background-color: floralwhite;
     opacity: .95;
     z-index: 100;
+  }
+
+  #article_portrait{
+    height: 180px;
+    overflow-y: scroll;
 
   }
 
@@ -157,6 +231,7 @@
     flex-flow: wrap;
     justify-content:center;
     text-align: center;
+
 
     h3{
       text-align: center;
@@ -181,8 +256,6 @@
     }
   }
 
-
-
   .confirmation{
     padding: 1em 0;
 
@@ -192,7 +265,7 @@
 
     a{
       margin: 1em;
-      color: $white;
+      color: $black;
       background-color: $grey;
       border: 1px solid $grey;
       border-radius: 4px;
@@ -212,6 +285,7 @@
   body{
     font-size: 1em;
   }
+
   .update_form{
     width: 60%;
   }

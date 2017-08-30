@@ -40,6 +40,25 @@ class PictureDAO extends DAO{
         return $pictures;
     }
 
+    public function findById($pictureId){
+        $req = " select * from alb_picture where pic_id=? ";
+        $result = $this->getDb()->fetchAssoc($req, array($pictureId));
+        return $this->buildObject($result);
+    }
+
+
+    public function picForSlider($albumId){
+        $req = "select pic_url from alb_picture where alb_id=?";
+        $result = $this->getDb()->fetchAll($req, array($albumId));
+        $pictures = array();
+        foreach ($result as $row => $value){
+            foreach ($value as $url){
+             array_push($pictures,$url);
+            }
+        }
+        return $pictures;
+    }
+
     public function savePic(Picture $picture){
         $pictureData = array(
             'pic_url'=>$picture->getUrl(),

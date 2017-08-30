@@ -12,7 +12,7 @@ use Portfolio\Domain\Blog;
 class BlogDAO extends DAO {
 
     public function findAll(){
-        $req = "select * from blog order by blog_id desc";
+        $req = "select * from blog order by date desc";
         $result = $this->getDb()->fetchAll($req);
 
         $blog = array();

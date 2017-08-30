@@ -7,6 +7,8 @@
  */
 namespace Portfolio\Domain;
 
+use Symfony\Component\Validator\Constraints\DateTime;
+
 class Album{
 
     /**
@@ -32,6 +34,8 @@ class Album{
      * @var string
      */
     private $category;
+
+    private $date;
 
     /**
      * @return int
@@ -95,6 +99,22 @@ class Album{
     public function setCategory($category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 
 }

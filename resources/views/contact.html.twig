@@ -1,49 +1,63 @@
 {% extends "base.html.twig" %}
 {% block section %}
     <section id="contact">
-        <div class="container slideUp">
+        <div class="container divUp">
             <div class="tony flex">
 
                 <div class="tony_portrait">
-                    <img src="{{ asset('images/tony2.jpg') }}" alt="Tony2">
+                    <img src="{{ asset('images/icons/logo-rond-noir.png') }}" alt="Tony2">
                 </div>
 
-                <div class="about_tony flex slideLeft">
+                <div class="about_tony flex">
                     <div class="title">
                         <h2>Tony Noel</h2>
                         <span class="photographe">PHOTOGRAPHE</span>
                     </div>
 
                     <div class="social">
-                        <p>tonynoelphotographe@gmail.com</p>
-                        <p>06 52 74 97 87</p>
+                        <p>Contact@tonynoel.com</p>
                         <a class="fb" href="https://www.facebook.com/tonynoelphotographe/?pnref=lhc" target="_blank"></a>
                         <a class="insta" href="https://www.instagram.com/tony_noel/" target="_blank"></a>
-
-                        {{ form_start(form,{'attr':{'class':'flex'}}) }}
-
-                        <label for="name">Nom: </label>
-                        {{ form_widget(form.name) }}
-
-                        <label for="email">Email: </label>
-                        {{ form_widget(form.email) }}
-
-                        <label for="subject">Sujet: </label>
-                        {{ form_widget(form.subject) }}
-
-                        <label for="message">Message: </label>
-                        {{ form_widget(form.message) }}
-
-                        <div class="button">
-                            <button type="submit">Envoyer</button>
-                        </div>
-                        {{ form_end(form) }}
                     </div>
 
                 </div>
 
-            </div>
+                <div class="contact_me">
+                    <p>Vous avez un projet en tête? Une idée  à developper ?N’hésitez pas à me contacter pour toutes demandes d’informations concernant mes tarifs.</p>
+                </div>
 
+                <div class="formulaire">
+
+                    <h3>Formulaire de contact</h3>
+                    {{ form_start(form,{'attr':{'class':'flex'}}) }}
+
+                    {#<label for="name">Nom: </label>#}
+                    {{ form_widget(form.name,{ 'attr': {
+                        'placeholder': 'Nom'}}) }}
+
+                    {#<label for="email">Email: </label>#}
+                    {{ form_widget(form.email,{ 'attr': {
+                        'placeholder': 'Email'}}) }}
+
+                    {#<label for="subject">Sujet: </label>#}
+                    {{ form_widget(form.subject,{ 'attr': {
+                        'class':'sujet',
+                        'placeholder': 'Sujet'}}) }}
+
+                    {#<label for="message">Message: </label>#}
+                    {{ form_widget(form.message,{ 'attr': {
+                        'placeholder': 'Message'}}) }}
+
+                    <div class="button">
+                        <button type="submit">Envoyer</button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+
+                <div class="mention">
+                    <a class="link link_hover" data-letters="Mentions légales" href="{{ path('mention') }}">Mentions légales</a>
+                </div>
+            </div>
 
         </div>
     </section>

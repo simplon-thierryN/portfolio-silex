@@ -1,5 +1,6 @@
 @media screen and (min-width: 300px) {
-  .category{
+
+  .category,.price{
     width: 100%;
     margin: auto;
     justify-content: center;
@@ -9,14 +10,19 @@
     }
 
     li{
-      font-size: .9em;
+      //font-size: 1.1em;
       padding: 1em 0;
       margin: 0 .5em;
     }
   }
+
+  .album_title {
+    display: none;
+  }
+
   #portfolio{
     p{
-      text-align: left;
+      //text-align: center;
       padding: .5em 0;
     }
 
@@ -37,7 +43,8 @@
     width: 100%;
 
     p{
-      margin: .5em 1.5em;
+      text-align: left;
+      margin: .5em 0em;
     }
 
     p::before{
@@ -48,7 +55,7 @@
       position: relative;
       vertical-align: middle;
       left: -12px;
-      background: url('../images/menu.png');
+      background: url('../images/icons/menu.png');
     }
   }
 
@@ -59,6 +66,39 @@
       width:100px;
       height: auto;
       margin: 5px;
+    }
+  }
+
+  .slider,.sliderImg{
+    width: 100%;
+    position: fixed;
+    margin-left:-50%;
+    top:0%;
+    left: 50%;
+    z-index: 100;
+  }
+
+  .slider{
+    display: none;
+    height: 100vh;
+    background-color: white;
+  }
+
+  .sliderImg{
+    z-index: 150;
+    height: 95vh;
+  }
+
+  .pagination{
+    //border: 1px solid red;
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+
+    .back{
+      background: url("../images/icons/cancel.png")no-repeat center;
+      background-size: contain;
     }
   }
 }

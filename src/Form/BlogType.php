@@ -22,6 +22,7 @@ class BlogType extends AbstractType{
         $builder->add('title', TextType::class);
         $builder->add('content', TextareaType::class);
         $builder->add('url', FileType::class, array('data_class' => null));
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

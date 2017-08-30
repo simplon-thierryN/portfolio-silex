@@ -1,174 +1,228 @@
 {% extends "base.html.twig" %}
 {% block section %}
     <section id="tarif">
-
-
         <div class="container">
-            <ul class="ml category price flex fadeIn">
-                <li>
-                    <a class="active" href="#portrait">Shooting</a>
-                </li>
-                <li>
-                    <a href="#evenement">Evénements</a>
-                </li>
-                <li>
-                    <a href="#pro">Professionnel</a>
-                </li>
-            </ul>
+            <div class="shooting_category divUp">
 
-            <div class="menu_xs fadeIn">
-                <div class="filter">
-                    <p>Filtrer par catégorie</p>
-                </div>
-                <ul class="xs category price flex">
-                    <li>
-                        <a class="active" href="#portrait">portraits</a>
-                    </li>
-                    <li>
-                        <a href="#evenement">événements</a>
-                    </li>
-                    <li>
-                        <a href="#pro">professionnel</a>
-                    </li>
+                <div id="particulier" class="particular_price flex">
+                    <h2>Particuliers</h2>
+                    <article>
+                        <figure>
+                            <img src="{{ asset('images/tarif/PORTRAIT05.jpg') }}" alt="portrait">
+                            <figcaption>
+                                <h3>Portrait</h3>
+                                <p>
+                                    3 Formules disponibles <br>
+                                    Shooting en solo, en duo ou groupes<br>
+                                    À partir de 100€
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </article>
 
-                </ul>
-            </div>
+                    <article>
+                        <figure>
 
-            <div class="menu_price slideUp">
-                <article class="portrait">
-                    {#<h2 >Portraits</h2>#}
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/STEPH01.jpg') }}" alt="STEPH">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>Solo</h3>
-                                <li>  1h de séance</li>
-                                <li>  6 photos HD</li>
-                                <li>  Gallerie en ligne</li>
-                                <li>100€</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="solo flex text_left">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>Duo</h3>
-                                <li>  1h de séance</li>
-                                <li>  6 photos HD</li>
-                                <li>  Gallerie en ligne</li>
-                                <li>100€</li>
-                            </ul>
-                        </div>
-                        <img src="{{ asset('images/tarif/LILY02.jpg') }}" alt="STEPH">
-                    </div>
-
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/STREETLIFE01.jpg') }}" alt="STEPH">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>Groupe</h3>
-                                <li>  1h de séance</li>
-                                <li>  6 photos HD</li>
-                                <li>  Gallerie en ligne</li>
-                                <li>100€</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="evenement">
-                    {#<h2>événements</h2>#}
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/EM_2_2015.jpg') }}" alt="wedding">
-                        <div class="price_detail">
-                            <ul>
+                            <img src="{{ asset('images/tarif/Wedding.jpg') }}" alt="mariage">
+                            <figcaption>
                                 <h3>Mariage</h3>
-                                <li>3 formules à partir de 700€</li>
-                            </ul>
-                        </div>
-                    </div>
+                                <p>
+                                    3 Formules disponibles<br>
+                                    Reportage photos de votre journée, pouvant aller des préparatifs jusqu'à la soirée<br>
+                                    À partir de 650€
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </article>
 
-                    <div class="solo flex text_left">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>enterrement de vie de garçon / jeune fille</h3>
-                                <li>Voir tarif de groupe</li>
-                            </ul>
-                        </div>
-                        <img src="{{ asset('images/tarif/potos.jpg') }}" alt="STEPH">
+                    <div class="mail">
+                        <a href="{{ path('contact') }}">Demande d'informations ou d'un devis</a>
                     </div>
+                </div>
 
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/PORTRAIT03.jpg') }}" alt="naissance">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>naissance / baptême</h3>
-                                <li>
-                                    Devis sur demande
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div id="pro" class="professionnal_price flex">
+                    <h2>Professionnels</h2>
+                    <article>
+                        <figure>
+                            <img src="{{ asset('images/tarif/Book.jpg') }}" alt="book">
+                            <figcaption>
+                                <h3>Book</h3>
+                                <p>
+                                    3 Formules disponibles <br>
+                                    Shooting en solo, en duo ou groupes<br>
+                                    À partir de 150€
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </article>
 
-                    <div class="solo flex text_left">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>Anniversaire / Soirée privée</h3>
-                                <li>Devis sur demande</li>
-                            </ul>
-                        </div>
-                        <img src="{{ asset('images/tarif/DSC00499.jpg') }}" alt="bob">
-                    </div>
-                </article>
+                    <article>
+                        <figure>
 
-                <article class="professionnel pro">
-                    {#<h2 >professionnel</h2>#}
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/entp.jpg') }}" alt="entreprise">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>entreprise</h3>
-                                <li>3 formules à partir de 700€</li>
-                            </ul>
-                        </div>
-                    </div>
+                            <img src="{{ asset('images/tarif/Event.jpg') }}" alt="événementiel">
+                            <figcaption>
+                                <h3>Événementiel / Entreprise</h3>
+                                <p>
+                                    À la demande
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </article>
 
-                    <div class="solo flex text_left">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>book</h3>
-                                <li>Intérieur / extérieur (location de studio, make up)</li>
-                                <li>Voir tarif de groupe</li>
-                            </ul>
-                        </div>
-                        <img src="{{ asset('images/tarif/STREET04.jpg') }}" alt="book">
-                    </div>
+                    <article>
+                        <figure>
+                            <img src="{{ asset('images/tarif/Pub.jpg') }}" alt="publicité">
+                            <figcaption>
+                                <h3>Publicité / Commerce</h3>
+                                <p>
+                                    À la demande
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </article>
 
-                    <div class="solo flex text_right">
-                        <img src="{{ asset('images/tarif/MUSIC05.jpg') }}" alt="evenementiel">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>événementiel</h3>
-                                <li>
-                                    Devis sur demande
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="mail">
+                        <a href="{{ path('contact') }}">Demande d'informations ou d'un devis</a>
                     </div>
+                </div>
 
-                    <div class="solo flex text_left">
-                        <div class="price_detail">
-                            <ul>
-                                <h3>publicité</h3>
-                                <li>Devis sur demande</li>
-                            </ul>
-                        </div>
-                        <img src="{{ asset('images/tarif/LYON05.jpg') }}" alt="lyon">
-                    </div>
-                </article>
+                {#<ul class="slider">#}
+                {#<li>#}
+                {#<div id="portrait" class="shooting portrait">#}
+                {#<article class="solo flex">#}
+                {##}
+                {#<div class="price_detail">#}
+                {#<ul>#}
+                {#<h3>Solo</h3>#}
+                {#<li>Séance 1h</li>#}
+                {#<li>6 photos HD</li>#}
+                {#<li>Gallerie en ligne</li>#}
+                {#<li>100€</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#</article>#}
+
+                {#<article class="duo flex">#}
+                {#<div class="price_detail right">#}
+                {#<ul>#}
+                {#<h3>Duo</h3>#}
+                {#<li>Séance 1h30</li>#}
+                {#<li>10 photos HD</li>#}
+                {#<li>Gallerie en ligne</li>#}
+                {#<li>150€</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#<img src="{{ asset('images/tarif/duo.jpg') }}" alt="portrait duo">#}
+                {#</article>#}
+
+                {#<article class="group flex">#}
+                {#<img src="{{ asset('images/tarif/groupe.jpg') }}" alt="portrait groupe">#}
+                {#<div class="price_detail">#}
+                {#<ul>#}
+                {#<h3>Groupe</h3>#}
+                {#<li></li>#}
+                {#<li>Séance 1h30</li>#}
+                {#<li>15 photos HD</li>#}
+                {#<li>Gallerie en ligne</li>#}
+                {#<li>100€</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</li>#}
+
+                {#<li id="mariage" >#}
+                {#<div class="shooting mariage">#}
+                {#<article class="group flex">#}
+                {#<img src="{{ asset('images/tarif/mariage1.jpg') }}" alt="portrait mariage">#}
+                {#<div class="price_detail">#}
+                {#<ul>#}
+                {#<h3>Mariage</h3>#}
+                {#<li>Reportage photo de votre journée</li>#}
+                {#<li>3 tarifs disponibles, à partir de 700€</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#</article>#}
+
+                {#<article class="group flex">#}
+                {#<div class="price_detail">#}
+                {#<img src="{{ asset('images/tarif/mariage2.jpg') }}" alt="portrait mariage">#}
+                {#</div>#}
+                {#<img src="{{ asset('images/tarif/mariage3.jpg') }}" alt="portrait mariage">#}
+                {#</article>#}
+                {#</div>#}
+                {#</li>#}
+
+                {#<li>#}
+                {#<div id="book" class="shooting book">#}
+                {#<article class="group flex">#}
+                {#<div class="price_detail right">#}
+                {#<ul>#}
+                {#<h3>Book</h3>#}
+                {#<li>À partir de 150€</li>#}
+                {#<li>Supplément#}
+                {#<ul>#}
+                {#<li>Location de studio</li>#}
+                {#<li>Coiffure, make up</li>#}
+                {#</ul>#}
+                {#</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#<img src="{{ asset('images/tarif/book3.jpg') }}" alt="portrait mariage">#}
+                {#</article>#}
+
+                {#<article class="group flex">#}
+                {#<img src="{{ asset('images/tarif/book1.jpg') }}" alt="portrait mariage">#}
+                {#<div class="price_detail">#}
+                {#<img src="{{ asset('images/tarif/book2.jpg') }}" alt="portrait mariage">#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</li>#}
+
+                {#<li>#}
+                {#<div id="event" class="shooting event">#}
+                {#<article class="group flex">#}
+                {#<img src="{{ asset('images/tarif/event1.jpg') }}" alt="portrait mariage">#}
+                {#<div class="price_detail">#}
+                {#<ul>#}
+                {#<h3>Événementiel</h3>#}
+                {#<li>Devis sur demande</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#</article>#}
+
+                {#<article class="group flex">#}
+                {#<div class="price_detail">#}
+                {#<img src="{{ asset('images/tarif/event2.jpg') }}" alt="portrait mariage">#}
+                {#</div>#}
+                {#<img src="{{ asset('images/tarif/event3.jpg') }}" alt="portrait mariage">#}
+                {#</article>#}
+                {#</div>#}
+                {#</li>#}
+
+                {#<li >#}
+                {#<div id="pub" class="shooting pub">#}
+                {#<article class="group flex">#}
+                {#<div class="price_detail right">#}
+                {#<ul>#}
+                {#<h3>Publicité</h3>#}
+                {#<li>Devis sur demande</li>#}
+                {#</ul>#}
+                {#</div>#}
+                {#<img src="{{ asset('images/tarif/pub3.jpg') }}" alt="portrait mariage">#}
+                {#</article>#}
+
+                {#<article class="group flex">#}
+                {#<img src="{{ asset('images/tarif/pub1.jpg') }}" alt="portrait mariage">#}
+                {#<div class="price_detail">#}
+                {#<img src="{{ asset('images/tarif/pub2.jpg') }}" alt="portrait mariage">#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</li>#}
+                {#</ul>#}
             </div>
         </div>
-
     </section>
 {% endblock %}

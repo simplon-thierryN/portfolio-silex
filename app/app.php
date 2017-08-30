@@ -10,7 +10,7 @@ use Symfony\Component\Debug\ExceptionHandler;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Provider\FormServiceProvider;
 use Portfolio\Form\ContactType;
-use Symfony\Component\BrowserKit\Response;
+
 
 // Register global error and exception handlers
 ErrorHandler::register();
@@ -45,6 +45,16 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../resources/views'
 ));
+//
+//$app->error(function (\Exception $e, $code) use ($app) {
+//        return $app->redirect('/');
+//});
+
+$app->register(new SilexMarkdown\MarkdownExtension(), array(
+    'markdown.features'   => array(
+        'header' => false, // don't render first level headlines
+    ),
+));
 
 $app['dao.album'] = function ($app){
     return new Portfolio\DAO\AlbumDAO($app['db']);
@@ -76,24 +86,20 @@ $app->match('/about', function () use($app){
 })->bind('about');
 
 
+//$app->error(function (\Exception $e, Request $request, $code) {
+//
+//});
 
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
-//$app['swiftmailer.options'] = array(
-//    'host' => 'smtp.gmail.com',
-//    'port' => '465',
-//    'username' => 'thierryngn@gmail.com',
-//    'password' => 'Touboul.0285',
-//    'encryption' => 'ssl',
-//    'auth_mode' => 'login'
-//);
 $app['swiftmailer.options'] = array(
-    'host' => 'mail.gandi.net',
-    'port' => '587',
-    'username' => '',
-    'password' => '',
-    'encryption' => 'tls',
-    'auth_mode' => 'SMTP'
+    'host' => 'smtp.gmail.com',
+    'port' => '465',
+    'username' => '$$$$$$$$$$$$',
+    'password' => '***********',
+    'encryption' => 'ssl',
+    'auth_mode' => 'login'
 );
+
 
 
 $app->match('/contact', function (Request $request) use($app){
@@ -117,8 +123,8 @@ $app->match('/contact', function (Request $request) use($app){
 
         $app['mailer']->send(\Swift_Message::newInstance()
             ->setSubject($data['subject'])
-            ->setFrom(array($data['email']))
-            ->setTo(array('thierryngn@gmail.com'))
+            ->setFrom(array('$$$$$$$$$$$'))
+            ->setTo(array('*************'))
             ->setBody($app['twig']->render('email.html.twig', array(
                 'subject'=>$data['subject'],
                 'name'=>$data['name'],
@@ -135,9 +141,7 @@ $app->match('/contact', function (Request $request) use($app){
     ));
 })->bind('contact');
 
-$app->get('/tarifs',function () use($app){
-    return $app['twig']->render('tarif.html.twig');
-})->bind('tarifs');
-
-
+$app->get('/mentions-legales',function() use($app){
+    return $app['twig']->render('mention.html.twig');
+})->bind('mention');
 return $app;

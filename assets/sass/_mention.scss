@@ -1,0 +1,36 @@
+@media screen and (min-width: 300px){
+
+  #mention{
+    h2{
+      text-align: center;
+    }
+
+    h2,h3{
+      margin-top: 2em;
+    }
+    p{
+      margin: .5em auto;
+    }
+
+    a{
+      color: $dark;
+    }
+  }
+  .mention{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 600px){
+
+  .mention_legale{
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .mention_legale{
+    width: 80%;
+  }
+}

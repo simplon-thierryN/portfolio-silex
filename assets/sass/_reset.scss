@@ -29,12 +29,17 @@ footer, header, menu, nav, section {
 //  overflow-x:hidden;
 //}
 
-
-
+@font-face {
+  font-family:"Myriad Pro Regular";
+  src: url(../font/MyriadProRegular/MyriadProRegular.ttf);
+}
+//
 body {
   line-height: 1;
-  font-family: 'Josefin Sans', Helvetica;
+  font-family: "Myriad Pro Regular","Helvetica Neue";
 }
+//
+//
 
 
 ol, ul {

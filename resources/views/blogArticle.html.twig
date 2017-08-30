@@ -11,13 +11,14 @@
                 <div class="button flex">
                     <button class="updateBlog">Modifier le blog</button>
                     <button class="PictureForm">Ajouter une image</button>
+                    <a href="{{ path('delete_article',{'articleId':article.id}) }}"> <span class="delAlbum span_img"></span></a>
                 </div>
 
                 <div id="updateBlog" class="update_form">
                     <h3>Modifier l'article</h3>
                     <div id="blog_portrait" class="imgProfil">
                         {% for portrait in album %}
-                            <img src="{{ asset('images/blog/'~portrait.url) }}" alt="{{ portrait.title }}">
+                            <img src="{{ asset('images/blog/'~article.title~'/'~portrait.url) }}" alt="{{ portrait.title }}">
                         {% endfor %}
                     </div>
                     <span class="back span_img"></span>
@@ -27,7 +28,12 @@
                     {{ form_widget(updateBlog.title) }}
 
                     <label for="title"> -- Content -- </label>
+                    <p>( markdown: retour à la ligne ajouter en fin de phrase  &#60;br&#62; :<br>
+                        lien: [nom du site](lien du site) )</p>
                     {{ form_widget(updateBlog.content) }}
+
+                    {#<label for="date"> -- Date -- </label>#}
+                    {#{{ form_widget(updateBlog.date) }}#}
 
                     <div class="button flex">
                         <button type="submit">Save</button>
@@ -53,18 +59,22 @@
                 </div>
             {% endif %}
 
-            <div class="detail_article flex">
-                <h3>{{ article.title }}</h3>
+            <div class="detail_article flex divUp">
+                <h3>{{ article.title|replace({'_':' '}) }}</h3>
                 <span class="date">{{ article.date|date('d-m-Y') }}</span>
+
                 <p class="description">
-                    {{ article.content }}<br>
+                    {{ article.content|markdown }}<br>
                 </p>
+
 
                 <div class="album_article">
                     {% for picture in album %}
                         <div class="picture_blog">
-                            <img src="{{ asset('images/blog/'~picture.url) }}" alt="{{ picture.title }}">
-                            <a href="{{ path('deleteImg',{'articleId':article.id, 'imgId':picture.id}) }}"><span class="del span_img"></span></a>
+                            <img src="{{ asset('images/blog/'~article.title~'/'~picture.url) }}" alt="{{ picture.title }}">
+                            {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a href="{{ path('deleteImg',{'articleId':article.id, 'imgId':picture.id}) }}"><span class="del span_img"></span></a>
+                            {% endif %}
                         </div>
                     {% endfor %}
                 </div>

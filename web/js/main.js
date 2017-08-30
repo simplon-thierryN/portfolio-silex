@@ -2,7 +2,28 @@
  * Created by nguyenthierry on 02/10/2016.
  *
  */
-$(window).on('load', function(){
+$(document).ready(function() {
+
+    $('#blog_content button').click(function () {
+       console.log($('textarea').val());
+    });
+
+    // $(".grid_overflow").hover(function () {
+    //    // $(this).find("p").addClass('titleSlide');
+    //    //  console.log('toto');
+    // });
+
+    $(".album").mouseover(function(){
+        $(this).children("p").removeClass('titleSlideOut');
+        $(this).children("p").removeClass('album_title');
+        $(this).children("p").addClass('titleSlideIn');
+    });
+
+    $(".album").mouseout(function(){
+        $(this).children("p").removeClass('titleSlideIn');
+        $(this).children("p").addClass('titleSlideOut ');
+        // $(this).children("p").addClass('album_title');
+    });
 
     var grid = $('.grid');
 
@@ -24,6 +45,8 @@ $(window).on('load', function(){
 
     $('.back').click(function () {
         $('.update_form').fadeOut();
+        $('.slider').fadeOut();
+        $(".slider img:last-child").remove();
     });
 
     $('.delAlbum').click(function () {
@@ -52,17 +75,11 @@ $(window).on('load', function(){
         }
     });
 
-
-    // var tonyHeight = $('.tony').height();
-    // console.log('tonyHeight ',tonyHeight);
-    // $('.tony').css('height',tonyHeight*1.5);
-
-
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- ajax img profil ---- XXXXXXXXXXXXXXXXXXXXXXXX */
     var url = window.location.pathname;
     var id = url.substring(url.lastIndexOf('/') + 1);
     var src;
-    var img;
+    var alb;
 
     $('#article_portrait img').click(function () {
         src = $(this).attr('src');
@@ -107,12 +124,7 @@ $(window).on('load', function(){
     else{
         $('header a[href="/'+link[3]+'"]').addClass('active');
     }
-    // $('header a[href="'+href[0]+'"]').addClass('active');
 
-    console.log('link ',link);
-    console.log('link3 ',link[3]);
-    console.log('href ',href[0]);
-    //add class active nav price
     var urlTarif = link[3].replace('#','/');
     var navTarif = urlTarif.split('/');
 
@@ -133,9 +145,6 @@ $(window).on('load', function(){
         $('.menu_price').find('article:not(.'+menuActive+')').addClass('hidden').stop().fadeOut();
         $('.xs').fadeOut();
     });
-
-
-
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- Height auto textarea ---- XXXXXXXXXXXXXXXXXXXXXXXX */
 
@@ -176,17 +185,9 @@ $(window).on('load', function(){
         var scrollTop = $(window).scrollTop();
         var calc = 1-((scrollTop/opacUntil)*3);
 
-        // if(scrollTop<headerHeight){
-        //     $('header').removeClass('headerFixed');
-        // }
-        // else if (scrollTop>(headerHeight)){
-        //     $('header').addClass('headerFixed');
-        // }
-
         if(scrollTop<logoHeight){
             $('.ml').removeClass('fixed');
             $('.menu_xs').removeClass('fixed');
-            // $('.container').css('border-top','1px solid');
         }
         else if(scrollTop>logoHeight){
             // log('add fixed');
@@ -226,7 +227,7 @@ $(window).on('load', function(){
         'top': headerHeight,
         'margin-left': -logoWidth/2
     });
-console.log('logo ',logoHeight);
+    console.log('logo ',logoHeight);
 
     console.log('headerHeight ',headerHeight);
     // add margin top section
@@ -241,6 +242,8 @@ console.log('logo ',logoHeight);
     }
 
     /*XXXXXXXXXXXXXXXXXXXXXXXX ---- MANSORY ---- XXXXXXXXXXXXXXXXXXXXXXXX */
+    $('.divUp').addClass('slideUp');
+    $('.divLeft').addClass('slideLeft');
 
     var $grid= grid.masonry({
         isAnimated:true,
@@ -284,20 +287,11 @@ console.log('logo ',logoHeight);
         e.preventDefault();
     });
 
-
-    $grid.on( 'click', '.grid-album', function() {
-        // change size of item via class
-        $( this ).toggleClass('grid-item--gigante');
-        // trigger layout
-        $grid.masonry();
-    });
-
     if(location.hash != ''){
         $('a[href="'+location.hash+'"]').trigger('click').addClass('active');
     }
-});
 
-$(document).ready(function() {
+
     $('body').css('visibility','visible');
 
     $("#blog article").each(function(i) {
@@ -305,9 +299,72 @@ $(document).ready(function() {
     });
 
 
-    $("img").on("contextmenu",function(e){
+
+    /*XXXXXXXXXXXXXXXXXXXXXXXX ---- Enable click right ---- XXXXXXXXXXXXXXXXXXXXXXXX */
+    $("body").on("contextmenu",function(e){
         return false;
     });
+
+    /*XXXXXXXXXXXXXXXXXXXXXXXX ---- Slider image ---- XXXXXXXXXXXXXXXXXXXXXXXX */
+    var pointer;
+
+    $('.gallery .grid-item').click(function(){
+        var url = window.location.pathname;
+        var id = url.substring(url.lastIndexOf('/') + 1);
+        var title=url.split('/');
+        pointer = $(this).index();
+        console.log('id :',pointer);
+
+        $('.slider').fadeIn().css({
+            'display':'flex',
+            'align-item':'center'
+        });
+        $.ajax({
+            type:'GET',
+            url:'/portfolio/album/'+title[3]+'/'+id+'/slider',
+            dataType:'JSON',
+            success:function(res){
+                console.log(res);
+                var img = $('<img>');
+                $('.sliderImg').css({
+                    "background": "url(/images/album/"+title[3]+"/"+res[pointer]+") no-repeat",
+                    "background-size":"contain",
+                    "background-position": "center",
+                });
+
+                console.log(res[pointer]);
+
+                $('.after').click(function () {
+                    pointer++;
+                    if (pointer >= res.length) {
+                        pointer = res.length-1;
+                    }
+                    console.log('after ',pointer);
+                    $('.sliderImg').css({
+                        "background": "url(/images/album/"+title[3]+"/"+res[pointer]+") no-repeat",
+                        "background-size":"contain",
+                        "background-position": "center"
+                    })
+                });
+
+
+                $('.prev').click(function () {
+                    pointer--;
+                    if (pointer < 0) {
+                        pointer = 0;
+                    }
+                    console.log('after ',pointer);
+                    $('.sliderImg').css({
+                        "background": "url(/images/album/"+title[3]+"/"+res[pointer]+") no-repeat",
+                        "background-size":"contain",
+                        "background-position": "center"
+                    })
+                });
+            }
+        });
+    });
+
+
 
 });
 

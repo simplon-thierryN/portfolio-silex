@@ -2,95 +2,86 @@
 
   #tarif{
 
-    h3{
-      //border:1px solid $green;
-      padding: 0;
-    }
-
-    h4, a{
-      //text-transform: uppercase;
-    }
-
+    text-align: center;
     .price{
-      justify-content: center;
+      text-align: left;
     }
+
 
     article{
-      width: 90%;
-      //border:1px solid $green;
-      margin: 1em auto;
+      width: 100%;
+      margin: 1em auto ;
+      align-items: center;
+      justify-content: space-around;
+      img{
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 
-  .solo{
-    margin: 1em auto;
-    //border:1px solid red;
+  figcaption{
+    padding: 1em 0;
+    p{
+      line-height: 1.2em;
+    }
+  }
+
+#pro{
+  margin-top: 2em;
+}
+
+.shooting_category{
+  h2,h3{
+    text-align: center;
+  }
+}
+
+  .particular_price::after{
+    content:"";
+    display: block;
+    width: 80%;
+    margin: 1em auto 0;
+    border-top:1px solid $grey;
+  }
+
+  .mail{
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
-
-    img{
-      max-width: 90%;
-      height: auto;
-      align-self: flex-start;
+    align-items: stretch;
+    a{
+      padding: 1em;
+      color: $dark;
     }
   }
-
-  .price_detail{
-    border-bottom:1px solid $grey;
-    width: 90%;
-    padding: 1em;
-    img{
-      max-width: 100%;
-      height: auto;
-    }
-    li{
-      margin: .2em auto;
-    }
-
-  }
-
-
-  .text_left{
-    .price_detail{
-      order: 1;
-    }
-  }
-
 }
 
 @media screen and (min-width: 600px) {
 
   #tarif{
     article{
-      font-size: 105%;
+      width: 30%;
     }
   }
 
-  .solo{
-    justify-content: space-around;
-    margin:2em auto;
-    img{
-      max-width: 40%;
-      height: auto;
-      //padding: 1em;
+  .price{
+    li{
+      margin: 0 2em;
     }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  #tarif{
+    .shooting_category{
+      margin: auto;
+      width: 80%;
+    }
+
   }
 
-  .price_detail{
-    width: 30%;
-    //padding: 1em;
-    img{
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  .text_left{
-    text-align: right;
-    .price_detail{
-      order: 0;
-    }
-  }
 }
 
 

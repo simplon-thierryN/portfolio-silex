@@ -26,7 +26,7 @@ class AlbumDAO extends DAO {
      * @return array Album
      */
     public function findAllAlbum(){
-        $req = "select * from album order by alb_id desc";
+        $req = "select * from album order by date desc";
         $result = $this->getDb()->fetchAll($req);
 
         $albums = array();
@@ -71,6 +71,7 @@ class AlbumDAO extends DAO {
         $album->setTitle($row['alb_title']);
         $album->setUrl($row['alb_url']);
         $album->setCategory($row['alb_category']);
+        $album->setDate($row['date']);
         return $album;
     }
 
@@ -82,7 +83,8 @@ class AlbumDAO extends DAO {
         $albumData = array(
             'alb_url' => $album->getUrl(),
             'alb_title' => $album->getTitle(),
-            'alb_category' => $album->getCategory()
+            'alb_category' => $album->getCategory(),
+            'date'=> $album->getDate()
         );
 
         if($album->getId()){

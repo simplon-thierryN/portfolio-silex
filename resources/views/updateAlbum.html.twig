@@ -2,7 +2,7 @@
 {% block section %}
     <section>
 
-        <div class="container">
+        <div class="container toto">
 
             {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
 
@@ -28,7 +28,7 @@
 
                     <div id="article_portrait" class="imgProfil flex">
                         {% for imgProfil in pictures %}
-                            <img src="{{ asset('images/album/'~imgProfil.url) }}" alt="{{ imgProfil.title }}">
+                            <img src="{{ asset('images/album/'~album.title~'/'~imgProfil.url) }}" alt="{{ imgProfil.title }}">
                         {% endfor%}
                     </div>
 
@@ -43,6 +43,7 @@
                         <button type="submit">save</button>
                     </div>
                     {{ form_end(updateAlbum) }}
+
                 </div>
 
                 <div id="imgAlbum" class="update_form">
@@ -67,10 +68,10 @@
 
             <a href="{{ path('portfolio') }}"><span class="span_img circle_back"></span></a>
 
-            <div class="grid">
+            <div class="gallery grid divUp">
                 {% for picture in pictures %}
                     <div class="grid-item album grid-album">
-                        <img src="{{ asset('images/album/'~picture.url) }}" alt="{{ picture.title }}">
+                        <img src="{{ asset('images/album/'~album.title~'/'~picture.url) }}" alt="{{ picture.title }}">
                         {#<p>{{ picture.title }}</p>#}
                         {% if app.user and is_granted('IS_AUTHENTICATED_FULLY') %}
                             <a class="delete" href="{{ path('delete_picture',{'albumId':album.id, 'pictureId':picture.id}) }}"><span class="del span_img"></span></a>
@@ -78,6 +79,16 @@
 
                     </div>
                 {% endfor %}
+            </div>
+
+            <div class="slider">
+               <div class="sliderImg">
+                   <div class="pagination flex">
+                       <span class="span_img circle_back pointer prev"></span>
+                       <span class="back span_img"></span>
+                       <span class="span_img more pointer after"></span>
+                   </div>
+               </div>
             </div>
 
         </div>

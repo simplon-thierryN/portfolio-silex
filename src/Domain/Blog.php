@@ -7,6 +7,7 @@
  */
 namespace Portfolio\Domain;
 
+
 class Blog{
 
     /**
@@ -40,17 +41,14 @@ class Blog{
     private $alt;
 
     /**
-     * Blog date
      * @var date
      */
     private $date;
 
-
-
-    public function __construct()
-    {
-        $this->date = new \DateTime();
-    }
+//    public function __construct()
+//    {
+//        $this->date = new \DateTime();
+//    }
 
     /**
      * @return int
@@ -133,19 +131,19 @@ class Blog{
     }
 
     /**
-     * @return date
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param date $date
+     * @param mixed $date
      */
     public function setDate($date)
     {
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 
 }

@@ -26,7 +26,7 @@ class BlogPicDAO extends DAO {
      * @param $articleId
      * @return array
      */
-    public function findPicById($articleId){
+    public function findById($articleId){
 
         $article = $this->blogDAO->findById($articleId);
 
@@ -44,6 +44,12 @@ class BlogPicDAO extends DAO {
         return $blogPic;
     }
 
+    public function findPicById($imgId){
+        $req = " select * from blog_pic where pic_id=? ";
+        $result = $this->getDb()->fetchAssoc($req, array($imgId));
+        return $this->buildObject($result);
+    }
+
     /**
      * Save img in blog article
      * @param BlogPicture $blogPicture
@@ -57,6 +63,10 @@ class BlogPicDAO extends DAO {
         $this->getDb()->insert('blog_pic',$pictureData);
         $id = $this->getDb()->lastInsertId();
         $blogPicture->setId($id);
+    }
+
+    public function deleteAllPic($imgId){
+        $this->getDb()->delete('blog_pic',array('blog_id' => $imgId));
     }
 
     /**
